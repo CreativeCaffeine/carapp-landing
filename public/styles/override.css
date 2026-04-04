@@ -74,6 +74,76 @@ nav.sidebar .top-level > li > details > summary {
 	color: #7c3aed !important;
 }
 
+/* ===== Mobile sidebar / menu — force light mode ===== */
+nav.sidebar,
+.sidebar-pane,
+.sidebar-content,
+#starlight__sidebar,
+.mobile-preferences,
+starlight-menu-button,
+[data-mobile-menu-expanded] nav.sidebar {
+	background-color: #fff !important;
+	background: #fff !important;
+	color: #1a1725 !important;
+}
+
+/* Mobile sidebar links */
+.sidebar-pane a,
+#starlight__sidebar a,
+.sidebar-content a {
+	color: #4a4558 !important;
+}
+
+.sidebar-pane a:hover,
+#starlight__sidebar a:hover {
+	color: #7c3aed !important;
+	background: #f5f3ff !important;
+}
+
+.sidebar-pane a[aria-current="page"],
+#starlight__sidebar a[aria-current="page"] {
+	color: #7c3aed !important;
+	font-weight: 700;
+}
+
+/* Mobile sidebar section titles */
+.sidebar-pane summary,
+#starlight__sidebar summary,
+.sidebar-content summary {
+	color: #7c3aed !important;
+	background: transparent !important;
+}
+
+.sidebar-pane .group-label,
+#starlight__sidebar .group-label {
+	color: #7c3aed !important;
+}
+
+/* Mobile sidebar icons (hamburger/close) */
+starlight-menu-button button {
+	color: #1a1725 !important;
+	background: #f5f3ff !important;
+	border: 1px solid #ddd6fe !important;
+	box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12) !important;
+}
+
+/* Mobile menu backdrop */
+body[data-mobile-menu-expanded]::before {
+	background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Mobile theme selector in sidebar */
+.mobile-preferences {
+	background: #fff !important;
+	border-color: #ede9fe !important;
+}
+
+.mobile-preferences label,
+.mobile-preferences select,
+.mobile-preferences span {
+	color: #4a4558 !important;
+}
+
 /* ===== Right sidebar (TOC) ===== */
 .right-sidebar a,
 .right-sidebar-panel a,
@@ -88,6 +158,34 @@ starlight-toc a[aria-current="true"] {
 .right-sidebar h2,
 starlight-toc h2 {
 	color: #1a1725 !important;
+}
+
+/* ===== Mobile TOC dropdown — force light mode ===== */
+mobile-starlight-toc,
+mobile-starlight-toc nav,
+mobile-starlight-toc details,
+mobile-starlight-toc summary,
+mobile-starlight-toc .dropdown,
+mobile-starlight-toc ul {
+	background-color: #fff !important;
+	background: #fff !important;
+	color: #1a1725 !important;
+}
+
+mobile-starlight-toc summary {
+	color: #4a4558 !important;
+	background: #f5f3ff !important;
+	border: 1px solid #ddd6fe !important;
+	border-radius: 14px !important;
+	box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12) !important;
+}
+
+mobile-starlight-toc a {
+	color: #4a4558 !important;
+}
+
+mobile-starlight-toc a:hover {
+	color: #7c3aed !important;
 }
 
 /* ===== Inline code ===== */
