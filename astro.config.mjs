@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://creativecaffeine.github.io',
+	base: '/carapp-landing',
 	integrations: [
 		starlight({
 			title: 'くるまのカルテ',
