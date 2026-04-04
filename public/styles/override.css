@@ -1,0 +1,221 @@
+/* Force light mode — loaded OUTSIDE @layer so it always wins over Starlight */
+
+/* ===== CSS Variables: force light palette at every specificity ===== */
+:root, :root[data-theme='dark'], html[data-theme='dark'], html {
+	--sl-color-bg: #fff !important;
+	--sl-color-bg-nav: #fff !important;
+	--sl-color-bg-sidebar: #f5f3ff !important;
+	--sl-color-text: #1a1725 !important;
+	--sl-color-text-accent: #6d28d9 !important;
+	--sl-color-white: #faf9fc !important;
+	--sl-color-gray-1: #e9e5f0 !important;
+	--sl-color-gray-2: #d4d0dc !important;
+	--sl-color-gray-3: #a8a3b3 !important;
+	--sl-color-gray-4: #78738a !important;
+	--sl-color-gray-5: #4a4558 !important;
+	--sl-color-gray-6: #2d2a36 !important;
+	--sl-color-black: #1a1725 !important;
+	--sl-color-accent-low: #f5f3ff !important;
+	--sl-color-accent: #7c3aed !important;
+	--sl-color-accent-high: #6d28d9 !important;
+	--sl-color-hairline: #ede9fe !important;
+	--sl-color-hairline-light: #f5f3ff !important;
+	--sl-color-bg-inline-code: #f5f3ff !important;
+	--sl-color-text-inline-code: #6d28d9 !important;
+	color-scheme: light !important;
+	background-color: #fff !important;
+	color: #1a1725 !important;
+}
+
+/* ===== Global text color force ===== */
+body, main, article, section, div, p, span, li, td, th, dt, dd, label,
+summary, details, figcaption, blockquote {
+	color: #0f0d1a !important;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5, h6 {
+	color: #0f0d1a !important;
+}
+
+/* Page title (Starlight) */
+.content-panel h1,
+[data-page-title],
+.sl-markdown-content > h1:first-of-type {
+	color: #1a1725 !important;
+}
+
+/* ===== Links (not LP buttons/links) ===== */
+a:not(.lp-btn):not(.lp-link):not(.lp-store-badge) {
+	color: #6d28d9 !important;
+}
+
+a:not(.lp-btn):not(.lp-link):not(.lp-store-badge):hover {
+	color: #7c3aed !important;
+}
+
+/* ===== Sidebar ===== */
+nav.sidebar a {
+	color: #4a4558 !important;
+}
+
+nav.sidebar a:hover {
+	color: #7c3aed !important;
+}
+
+nav.sidebar a[aria-current="page"] {
+	color: #7c3aed !important;
+	font-weight: 700;
+}
+
+/* Sidebar section titles */
+nav.sidebar summary,
+nav.sidebar .top-level > li > details > summary {
+	color: #7c3aed !important;
+}
+
+/* ===== Right sidebar (TOC) ===== */
+.right-sidebar a,
+.right-sidebar-panel a,
+starlight-toc a {
+	color: #4a4558 !important;
+}
+
+starlight-toc a[aria-current="true"] {
+	color: #7c3aed !important;
+}
+
+.right-sidebar h2,
+starlight-toc h2 {
+	color: #1a1725 !important;
+}
+
+/* ===== Inline code ===== */
+code:not(pre code) {
+	background-color: #f5f3ff !important;
+	color: #6d28d9 !important;
+}
+
+/* ===== Code blocks ===== */
+pre {
+	background-color: #faf9fc !important;
+	border: 1px solid #ede9fe !important;
+}
+
+pre code {
+	color: #1a1725 !important;
+	background: transparent !important;
+}
+
+/* ===== Tables ===== */
+th {
+	background: #f5f3ff !important;
+	color: #6d28d9 !important;
+}
+
+td {
+	background-color: #fff !important;
+	color: #1a1725 !important;
+}
+
+table {
+	border-color: #ede9fe !important;
+}
+
+/* ===== Callouts / Asides ===== */
+.starlight-aside {
+	background-color: #faf9fc !important;
+	color: #1a1725 !important;
+}
+
+.starlight-aside p,
+.starlight-aside li {
+	color: #2d2a36 !important;
+}
+
+/* ===== Pagination (prev/next) ===== */
+.pagination-links a {
+	color: #6d28d9 !important;
+	border-color: #ede9fe !important;
+	background: #fff !important;
+}
+
+.pagination-links a span,
+.pagination-links a .link-title {
+	color: #1a1725 !important;
+}
+
+.pagination-links a .link-page {
+	color: #6d28d9 !important;
+}
+
+.pagination-links a:hover {
+	border-color: #c4b5fd !important;
+	background: #f5f3ff !important;
+}
+
+/* ===== Borders / Hairlines ===== */
+hr, .content-panel, nav.sidebar {
+	border-color: #ede9fe !important;
+}
+
+/* ===== List markers ===== */
+li::marker {
+	color: #c4b5fd !important;
+}
+
+/* ===== Muted / secondary text ===== */
+small, .meta, time, [class*="muted"] {
+	color: #78738a !important;
+}
+
+/* ===== Footer badges ===== */
+.lp-footer__badges {
+	display: flex !important;
+	align-items: center !important;
+	gap: 0 !important;
+}
+
+/* App Store: no built-in padding, keep small */
+.lp-footer__badges a:first-child img {
+	height: 34px !important;
+	width: auto !important;
+}
+
+/* Google Play: 23% of image height is transparent padding (29px top + 29px bottom out of 250px) */
+/* Black area = 76.8% of image. To match App Store 34px: 34 / 0.768 = 44px */
+.lp-footer__badges a:last-child img {
+	height: 44px !important;
+	width: auto !important;
+}
+
+/* ===== LP buttons ===== */
+.lp-btn--primary,
+a.lp-btn--primary {
+	color: #fff !important;
+	background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+}
+
+a.lp-btn--ghost {
+	color: #6d28d9 !important;
+}
+
+/* ===== LP dark section — override the global dark text force ===== */
+.lp-block--dark h2,
+.lp-block--dark .lp-block__title {
+	color: #f5f3ff !important;
+}
+
+.lp-block--dark p,
+.lp-block--dark .lp-block__desc {
+	color: #d4d0e8 !important;
+}
+
+.lp-block--dark .lp-block__label {
+	color: #a78bfa !important;
+}
+
+/* LP footer */
+.lp-footer p {
+	color: #a8a3b3 !important;
+}

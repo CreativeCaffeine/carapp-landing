@@ -1,34 +1,147 @@
 ---
-title: carapp
+title: くるまのカルテ
 description: あなたの車のすべてを、ひとつのアプリで。
 template: splash
 hero:
-  tagline: 給油・メンテナンス・車検・税金。車に関わるすべての記録をスマートに管理。
-  actions:
-    - text: 機能を見る
-      link: /guides/features/
-      icon: right-arrow
-    - text: GitHub
-      link: https://github.com/hijackeboy/carapp
-      icon: external
-      variant: minimal
+  tagline: ""
+  actions: []
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+<div class="lp">
 
-## 主な機能
+{/* ===== HERO ===== */}
+<section class="lp-hero">
+  <p class="lp-hero__badge">Car Mante Daily</p>
+  <h1 class="lp-hero__title">
+    愛車管理を<br/><span class="lp-hero__gradient">もっとスマートに</span>
+  </h1>
+  <p class="lp-hero__subtitle">
+    給油・車検・メンテナンス・税金。<br/>すべてのコストを一元管理。
+  </p>
+  <div class="lp-hero__cta">
+    <a href="/guide/getting-started/" class="lp-link">使い方を見る →</a>
+  </div>
+  <div class="lp-hero__image">
+    <div class="lp-hero__phones">
+      <div class="lp-phone lp-phone--back">
+        <img src="/screens/logs.png" alt="ログ画面" loading="eager" />
+      </div>
+      <div class="lp-phone lp-phone--front">
+        <img src="/screens/home.png" alt="ホーム画面" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
 
-<CardGrid stagger>
-  <Card title="記録管理" icon="pencil">
-    給油・メンテナンス・車検・税金・洗車など、あらゆる車関連の費用と記録をカテゴリ別に管理。
-  </Card>
-  <Card title="OCR読み取り" icon="document">
-    レシートや車検明細をカメラで撮影するだけ。AIが自動で金額・日付・項目を読み取り。
-  </Card>
-  <Card title="ドライブ記録" icon="rocket">
-    GPSでドライブルートを自動記録。走行距離・時間・燃費を可視化。
-  </Card>
-  <Card title="費用分析" icon="approve-check">
-    月別・年別の維持費を自動集計。カテゴリ別のコスト推移をグラフで確認。
-  </Card>
-</CardGrid>
+{/* ===== FEATURE 1: OCR ===== */}
+<section class="lp-block lp-block--white">
+  <div class="lp-block__text">
+    <p class="lp-block__label">AI OCR</p>
+    <h2 class="lp-block__title">撮るだけで、<br/>入力完了。</h2>
+    <p class="lp-block__desc">レシートをカメラで撮影するだけ。<br/>AIが金額・日付・項目を自動で認識します。</p>
+  </div>
+  <div class="lp-block__image">
+    <div class="lp-block__phone-pair">
+      <div class="lp-phone lp-phone--md">
+        <img src="/screens/record-type.png" alt="記録カテゴリ" loading="lazy" />
+      </div>
+      <div class="lp-phone lp-phone--md">
+        <img src="/screens/ocr.png" alt="OCRスキャン" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===== FEATURE 2: Drive ===== */}
+<section class="lp-block lp-block--dark">
+  <div class="lp-block__text">
+    <p class="lp-block__label">ドライブ</p>
+    <h2 class="lp-block__title">走るたびに、<br/>記録が残る。</h2>
+    <p class="lp-block__desc">GPSが走行ルートを自動追跡。<br/>距離も、時間も、思い出も。</p>
+  </div>
+  <div class="lp-block__image">
+    <div class="lp-block__phone-pair">
+      <div class="lp-phone lp-phone--md lp-phone--dark">
+        <img src="/screens/driving.png" alt="ドライブ中" loading="lazy" />
+      </div>
+      <div class="lp-phone lp-phone--md lp-phone--dark">
+        <img src="/screens/drive-result.png" alt="ドライブ結果" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===== FEATURE 3: Stats ===== */}
+<section class="lp-block lp-block--gray">
+  <div class="lp-block__text">
+    <p class="lp-block__label">費用分析</p>
+    <h2 class="lp-block__title">いくらかかってる？<br/>がすぐわかる。</h2>
+    <p class="lp-block__desc">月別・年別の維持費を自動集計。<br/>カテゴリ別の内訳もひと目で。</p>
+  </div>
+  <div class="lp-block__image">
+    <div class="lp-block__phone-pair">
+      <div class="lp-phone lp-phone--md">
+        <img src="/screens/cost.png" alt="費用分析" loading="lazy" />
+      </div>
+      <div class="lp-phone lp-phone--md">
+        <img src="/screens/stats.png" alt="統計" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===== MORE FEATURES ===== */}
+<section class="lp-block lp-block--white">
+  <div class="lp-block__text">
+    <h2 class="lp-block__title">さらに便利な機能。</h2>
+  </div>
+  <div class="lp-tiles">
+    <div class="lp-tile">
+      <div class="lp-tile__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+      </div>
+      <h3 class="lp-tile__title">実績システム</h3>
+      <p class="lp-tile__desc">記録やドライブで実績を解除。称号を獲得しよう。</p>
+    </div>
+    <div class="lp-tile">
+      <div class="lp-tile__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3 class="lp-tile__title">リマインダー</h3>
+      <p class="lp-tile__desc">車検や点検の時期を通知。うっかり忘れを防止。</p>
+    </div>
+    <div class="lp-tile">
+      <div class="lp-tile__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3 class="lp-tile__title">複数台管理</h3>
+      <p class="lp-tile__desc">家族の車もまとめて管理。ワンタップで切り替え。</p>
+    </div>
+  </div>
+</section>
+
+{/* ===== CTA ===== */}
+<section class="lp-block lp-block--accent">
+  <div class="lp-block__text">
+    <h2 class="lp-block__title">はじめよう。</h2>
+    <p class="lp-block__desc">車の維持費管理を、もっとスマートに。</p>
+    <div class="lp-block__cta">
+      <a href="/guide/getting-started/" class="lp-link">使い方ガイド</a>
+      <a href="/faq/general/" class="lp-link">よくある質問</a>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <div class="lp-footer__badges">
+    <a href="/" aria-label="App Storeからダウンロード">
+      <img src="/badge-appstore.svg" alt="Download on the App Store" />
+    </a>
+    <a href="/" aria-label="Google Playで手に入れよう">
+      <img src="/badge-googleplay.png" alt="Google Playで手に入れよう" />
+    </a>
+  </div>
+  <p>&copy; 2026 くるまのカルテ — Car Mante Daily</p>
+</footer>
+
+</div>

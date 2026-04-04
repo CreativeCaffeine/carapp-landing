@@ -6,28 +6,45 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'carapp',
-			description: 'Flutter製カーメンテナンス管理アプリ',
+			title: 'くるまのカルテ',
+			description: 'あなたの車のすべてを、ひとつのアプリで。',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/hijackeboy/carapp' }],
+			components: {
+				ThemeProvider: './src/components/ThemeProvider.astro',
+			},
+			social: [],
+			disable404Route: false,
+			pagefind: false,
+			head: [
+				{
+					tag: 'script',
+					content: `document.documentElement.setAttribute('data-theme', 'light');localStorage.setItem('starlight-theme', 'light');`,
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'stylesheet', href: '/styles/override.css' },
+				},
+			],
+			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{
-					label: 'はじめに',
+					label: '使い方ガイド',
 					items: [
-						{ label: '概要', slug: 'guides/overview' },
-						{ label: '機能一覧', slug: 'guides/features' },
-						{ label: 'セットアップ', slug: 'guides/setup' },
+						{ label: 'はじめに', slug: 'guide/getting-started' },
+						{ label: '車両を登録する', slug: 'guide/add-vehicle' },
+						{ label: '記録をつける', slug: 'guide/add-record' },
+						{ label: 'OCRで読み取る', slug: 'guide/ocr' },
+						{ label: 'ドライブを記録する', slug: 'guide/drive' },
+						{ label: '費用を確認する', slug: 'guide/stats' },
 					],
 				},
 				{
-					label: '技術ドキュメント',
+					label: 'よくある質問',
 					items: [
-						{ label: 'テックスタック', slug: 'reference/tech-stack' },
-						{ label: 'アーキテクチャ', slug: 'reference/architecture' },
-						{ label: 'データベース', slug: 'reference/database' },
+						{ label: 'FAQ', slug: 'faq/general' },
 					],
 				},
 			],
