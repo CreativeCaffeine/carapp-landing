@@ -27,7 +27,7 @@ export default defineConfig({
 				},
 				{
 					tag: 'link',
-					attrs: { rel: 'stylesheet', href: '/styles/override.css' },
+					attrs: { rel: 'stylesheet', href: '/carapp-landing/styles/override.css' },
 				},
 			],
 			customCss: ['./src/styles/custom.css'],
