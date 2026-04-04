@@ -1,0 +1,34 @@
+---
+title: carapp
+description: あなたの車のすべてを、ひとつのアプリで。
+template: splash
+hero:
+  tagline: 給油・メンテナンス・車検・税金。車に関わるすべての記録をスマートに管理。
+  actions:
+    - text: 機能を見る
+      link: /guides/features/
+      icon: right-arrow
+    - text: GitHub
+      link: https://github.com/hijackeboy/carapp
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 主な機能
+
+<CardGrid stagger>
+  <Card title="記録管理" icon="pencil">
+    給油・メンテナンス・車検・税金・洗車など、あらゆる車関連の費用と記録をカテゴリ別に管理。
+  </Card>
+  <Card title="OCR読み取り" icon="document">
+    レシートや車検明細をカメラで撮影するだけ。AIが自動で金額・日付・項目を読み取り。
+  </Card>
+  <Card title="ドライブ記録" icon="rocket">
+    GPSでドライブルートを自動記録。走行距離・時間・燃費を可視化。
+  </Card>
+  <Card title="費用分析" icon="approve-check">
+    月別・年別の維持費を自動集計。カテゴリ別のコスト推移をグラフで確認。
+  </Card>
+</CardGrid>
