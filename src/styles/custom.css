@@ -395,3 +395,40 @@ nav.sidebar a[aria-current="page"] { background: transparent !important; color: 
 :not([data-has-hero]) .sl-markdown-content a { color: #7c3aed; text-decoration: underline; text-decoration-color: #ddd6fe; text-underline-offset: 3px; }
 .pagination-links a { border-radius: 16px !important; border-color: #ede9fe !important; }
 .pagination-links a:hover { border-color: #c4b5fd !important; background: #f5f3ff !important; }
+
+/* ===== SPECS PAGES (Internal docs for PO/Designer) ===== */
+.spec-banner { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1.25rem; background: linear-gradient(135deg, #fef3c7, #fed7aa); border-radius: 14px; border: 1px solid #fdba74; margin-bottom: 2rem; font-size: 0.9rem; color: #7c2d12; font-weight: 500; }
+.spec-banner__icon { font-size: 1.25rem; }
+
+.spec-badge { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.18em 0.6em; border-radius: 999px; font-size: 0.75rem; font-weight: 600; line-height: 1.4; white-space: nowrap; border: 1px solid transparent; }
+.spec-badge--ok      { background: #dcfce7; color: #15803d; border-color: #86efac; }
+.spec-badge--partial { background: #fef3c7; color: #a16207; border-color: #fcd34d; }
+.spec-badge--missing { background: #fee2e2; color: #b91c1c; border-color: #fca5a5; }
+.spec-badge--draft   { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+.spec-badge--na      { background: #f1f5f9; color: #64748b; border-color: #cbd5e1; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.spec-card { display: block; padding: 1.25rem; border-radius: 16px; border: 1px solid #ede9fe; background: #fff; text-decoration: none !important; color: inherit; transition: all 0.15s ease; }
+.spec-card:hover { border-color: #c4b5fd; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08); }
+.spec-card__head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; }
+.spec-card__title { font-weight: 700; font-size: 1rem; color: #1a1725; }
+.spec-card__desc { font-size: 0.85rem; color: #6b7280; line-height: 1.5; margin: 0; }
+
+.spec-matrix { width: 100%; font-size: 0.85rem; }
+.spec-matrix th, .spec-matrix td { padding: 0.625rem 0.75rem !important; }
+.spec-matrix tbody tr:hover td { background: #faf9fc; }
+.spec-matrix__group td { background: #f5f3ff !important; font-weight: 700; color: #7c3aed; padding-top: 0.875rem !important; padding-bottom: 0.875rem !important; }
+.spec-matrix__feature { font-weight: 600; }
+.spec-matrix__note { color: #6b7280; font-size: 0.8rem; }
+
+.spec-questions { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+.spec-question { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: start; padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid #ede9fe; background: #fff; }
+.spec-question__id { font-family: ui-monospace, monospace; font-size: 0.8rem; color: #7c3aed; font-weight: 700; padding-top: 0.1rem; }
+.spec-question__body { font-size: 0.92rem; line-height: 1.55; color: #2d2a36; }
+.spec-question__body strong { color: #1a1725; }
+.spec-question__meta { display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-end; font-size: 0.75rem; color: #6b7280; }
+
+@media (max-width: 640px) {
+  .spec-question { grid-template-columns: 1fr; }
+  .spec-question__meta { flex-direction: row; align-items: center; }
+}

@@ -1,0 +1,211 @@
+---
+title: オープン課題一覧
+description: 各仕様書に散らばっている PO 確認事項・設計判断待ちを集約する。
+sidebar:
+  hidden: true
+---
+
+<div class="spec-banner">
+  <span class="spec-banner__icon">❓</span>
+  <span><strong>未確定の判断</strong> — ここに載っている項目は実装/表記/UX の「決まっていない部分」。レビュー会議で 1 つずつ着地させる。</span>
+</div>
+
+## 凡例
+
+<p>
+  <span class="spec-badge spec-badge--missing">🔴 高</span> リリース判断にブロッカー{' '}
+  <span class="spec-badge spec-badge--partial">🟡 中</span> マーケ表記とのギャップ{' '}
+  <span class="spec-badge spec-badge--draft">🔵 低</span> 改善余地{' '}
+  <span class="spec-badge spec-badge--ok">✅ 解決済</span> 着地済み
+</p>
+
+## 🔴 高優先度（リリース前に決定が必要）
+
+<div class="spec-questions">
+  <div class="spec-question" id="q-vehicle-limit">
+    <div class="spec-question__id">Q-VEHICLE<br/>-LIMIT</div>
+    <div class="spec-question__body">
+      <strong>車両台数制限を実装するか、LP 表記を変更するか</strong>
+      <br/>
+      LP / プラン画面では「Free: 1 台 / Premium: 無制限」と表記しているが、コード上は台数チェックなし。Free でも 2 台目を追加できる状態。
+      <br/>
+      <em>選択肢:</em> (a) 車両追加時に Free 制限チェックを実装 / (b) LP 表記を「将来制限予定」に変更 / (c) 制限自体を撤廃
+      <br/>
+      <a href="/carapp-landing/specs/subscription-limits/#表記上の制限実装でのエンフォースなし">→ 関連仕様</a>
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--missing">🔴 高</span>
+      <span>担当: PO</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-export">
+    <div class="spec-question__id">Q-EXPORT</div>
+    <div class="spec-question__body">
+      <strong>データエクスポート (CSV/PDF) を MVP に含めるか</strong>
+      <br/>
+      LP では Premium 機能として「データエクスポート ✅」と記載。実装は未着手（<code>export_service.dart</code> に骨組みのみ）。
+      <br/>
+      <em>選択肢:</em> (a) MVP 必須として開発する / (b) ロードマップに移し LP 表記を一旦下げる / (c) 「準備中」表示で出す
+      <br/>
+      <a href="/carapp-landing/specs/subscription-limits/#表記上の制限実装でのエンフォースなし">→ 関連仕様</a>
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--missing">🔴 高</span>
+      <span>担当: PO + Eng</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-scheduled-push">
+    <div class="spec-question__id">Q-SCHED<br/>-PUSH</div>
+    <div class="spec-question__body">
+      <strong>scheduled push 通知をいつ実装するか</strong>
+      <br/>
+      現状はアプリ起動時のポーリング方式。「車検 30 日前にピンポイントで通知」のような UX が成立していない。<code>tz</code> パッケージ追加 + zonedSchedule 実装が必要。
+      <br/>
+      <em>影響:</em> リマインダー機能の実用性に直結。「アプリを開かないと通知が来ない」現状はユーザー体験の弱点として大きい
+      <br/>
+      <a href="/carapp-landing/specs/notification-matrix/#既知の制約">→ 関連仕様</a>
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--missing">🔴 高</span>
+      <span>担当: Eng</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+</div>
+
+## 🟡 中優先度（マーケティング/表記との整合）
+
+<div class="spec-questions">
+  <div class="spec-question" id="q-stats-diff">
+    <div class="spec-question__id">Q-STATS<br/>-DIFF</div>
+    <div class="spec-question__body">
+      <strong>統計の Free/Premium 差分機能を具体化する</strong>
+      <br/>
+      LP 表記は「Free: 基本 / Premium: 詳細・期間比較」だが、実装上の差分は無し。Premium ならではの統計機能が定義されていない。
+      <br/>
+      <em>候補:</em> 期間比較（前月 vs 今月）、年単位の長期グラフ、車両比較（複数台ある場合）、CSV 取り込みでのトレンド分析など
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--partial">🟡 中</span>
+      <span>担当: PO + Designer</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-ads">
+    <div class="spec-question__id">Q-ADS</div>
+    <div class="spec-question__body">
+      <strong>広告を実装するか・しないか</strong>
+      <br/>
+      LP は「Free: 広告あり / Premium: 非表示」と表記。広告 SDK は未組み込み。そもそも「広告を表示する」前提自体が未確定。
+      <br/>
+      <em>選択肢:</em> (a) AdMob 等を組み込み Free に表示する / (b) 広告なしモデルに切り替え LP 表記を変える / (c) Sponsored Content 形式（提携店舗紹介）
+      <br/>
+      <em>注意:</em> 広告ありにする場合、UX 設計（どこに置くか）と Premium の動機付けを同時に決める必要
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--partial">🟡 中</span>
+      <span>担当: PO</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-insurance-tax-notify">
+    <div class="spec-question__id">Q-INS-TAX<br/>-NOTIFY</div>
+    <div class="spec-question__body">
+      <strong>任意保険・自動車税の通知を実装するか</strong>
+      <br/>
+      LP には記載していないが、リマインダー機能の自然な拡張。通知メソッド自体が無い状態。
+      <br/>
+      <em>選択肢:</em> (a) 自動車税は毎年 5 月固定なので OS の標準通知でも良い / (b) アプリ独自で柔軟にスケジュール
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--partial">🟡 中</span>
+      <span>担当: PO + Designer</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+</div>
+
+## 🔵 低優先度（後で良い）
+
+<div class="spec-questions">
+  <div class="spec-question" id="q-ocr-reset">
+    <div class="spec-question__id">Q-OCR<br/>-RESET</div>
+    <div class="spec-question__body">
+      <strong>OCR 月次上限のリセット日時の挙動確認</strong>
+      <br/>
+      月初 = ローカル 00:00 か UTC か。海外旅行中などにユーザーが混乱する余地。コードを確認して仕様書に追記する。
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--draft">🔵 低</span>
+      <span>担当: Eng</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-i18n">
+    <div class="spec-question__id">Q-I18N</div>
+    <div class="spec-question__body">
+      <strong>通知文言の i18n 対応（英語）</strong>
+      <br/>
+      現状は日本語のみ。海外展開を想定するなら通知メッセージのローカライズが必要。
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--draft">🔵 低</span>
+      <span>担当: Eng</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+
+  <div class="spec-question" id="q-deep-link">
+    <div class="spec-question__id">Q-DEEP<br/>-LINK</div>
+    <div class="spec-question__body">
+      <strong>通知タップ時の deep link</strong>
+      <br/>
+      該当リマインダーの詳細を開くなど、通知から自然に画面遷移する導線が無い。
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--draft">🔵 低</span>
+      <span>担当: Eng + Designer</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
+</div>
+
+## 集計
+
+<div class="spec-grid">
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🔴 高優先度</span>
+      <span class="spec-badge spec-badge--missing">3</span>
+    </div>
+    <p class="spec-card__desc">リリース判断のブロッカー。Q-VEHICLE-LIMIT / Q-EXPORT / Q-SCHED-PUSH。</p>
+  </div>
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🟡 中優先度</span>
+      <span class="spec-badge spec-badge--partial">3</span>
+    </div>
+    <p class="spec-card__desc">マーケ表記との整合 + 機能拡張候補。Q-STATS-DIFF / Q-ADS / Q-INS-TAX-NOTIFY。</p>
+  </div>
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🔵 低優先度</span>
+      <span class="spec-badge spec-badge--draft">3</span>
+    </div>
+    <p class="spec-card__desc">後回し可。Q-OCR-RESET / Q-I18N / Q-DEEP-LINK。</p>
+  </div>
+</div>
+
+## このページの運用ルール
+
+- 課題 ID は `Q-XXX` 形式。仕様書本体や PR からこの ID で参照する
+- 「解決済」になったら別セクションに移動、削除はしない（履歴として残す）
+- 各個別 specs に新しく書く `## オープン課題` の項目は、ここにも追記する（または逆向き）
+- 重複防止のため、追加前に該当 ID 候補で検索する
