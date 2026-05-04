@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /carapp-landing/specs/
+Allow: /
+
+Sitemap: https://creativecaffeine.github.io/carapp-landing/sitemap-index.xml
