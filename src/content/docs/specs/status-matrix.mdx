@@ -1,0 +1,245 @@
+---
+title: ステータスマトリクス
+description: 全機能 × Free/Premium × 実装状態を 1 枚で俯瞰する。
+sidebar:
+  hidden: true
+---
+
+<div class="spec-banner">
+  <span class="spec-banner__icon">📊</span>
+  <span><strong>最終更新: 2026-05-05</strong> — 数値とエンフォース状態は実装に基づく。マーケティング表記とのギャップは「実装状態」列で確認。</span>
+</div>
+
+## 凡例
+
+<p>
+  <span class="spec-badge spec-badge--ok">✅</span> 実装済み{' '}
+  <span class="spec-badge spec-badge--partial">⚠️</span> 部分実装/表記ズレ{' '}
+  <span class="spec-badge spec-badge--missing">❌</span> 未実装{' '}
+  <span class="spec-badge spec-badge--draft">🔄</span> 設計中{' '}
+  <span class="spec-badge spec-badge--na">—</span> 該当なし
+</p>
+
+## 機能カテゴリ別
+
+<table class="spec-matrix">
+  <thead>
+    <tr>
+      <th style={{width: '22%'}}>機能</th>
+      <th style={{width: '15%'}}>Free</th>
+      <th style={{width: '15%'}}>Premium</th>
+      <th style={{width: '13%'}}>実装状態</th>
+      <th>備考 / 詳細</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="spec-matrix__group"><td colSpan="5">🚗 車両・記録</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">車両登録</td>
+      <td>1 台（表記）</td>
+      <td>無制限</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">コードでの台数チェックなし。Free でも 2 台目以降を追加可能（要 PO 確認: <a href="/carapp-landing/specs/open-questions/#q-vehicle-limit">#Q-VEHICLE-LIMIT</a>）</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">給油・充電記録</td>
+      <td>無制限</td>
+      <td>無制限</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">満タン給油同士の燃費自動計算込み</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">メンテナンス記録</td>
+      <td>無制限</td>
+      <td>無制限</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">10 サブカテゴリすべて利用可</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">洗車・税金保険・高速料金・書類</td>
+      <td>無制限</td>
+      <td>無制限</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">記録機能本体は全プラン共通</td>
+    </tr>
+    <tr class="spec-matrix__group"><td colSpan="5">🛣️ ドライブ・移動</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">ドライブ記録（手動）</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">GPS 走行ルート + 距離・時間記録</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">自動記録 (GPS)</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">速度閾値 20 km/h、停車 cooldown 3 分</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">自動記録 (Bluetooth)</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">カーオーディオ接続検知</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">自動記録 (iBeacon)</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">BLE タグ近接検知</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">ドライブスコア</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--partial">⚠️</span></td>
+      <td class="spec-matrix__note">算出式・パラメータの仕様書未整備（要作成）</td>
+    </tr>
+    <tr class="spec-matrix__group"><td colSpan="5">🤖 入力支援・分析</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">AI OCR レシート読み取り</td>
+      <td>月 <strong>3 回</strong></td>
+      <td>月 <strong>30 回</strong></td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">月初リセット。上限到達時は PlanScreen へ誘導</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">車検証 OCR</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">月次上限のカウント対象（要確認）</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">統計・グラフ（基本）</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">月別/年別維持費・カテゴリ内訳</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">統計・グラフ（詳細）</td>
+      <td>—</td>
+      <td>差分機能（表記）</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">Free/Premium で差分なし。要仕様化（<a href="/carapp-landing/specs/open-questions/#q-stats-diff">#Q-STATS-DIFF</a>）</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">データエクスポート (CSV/PDF)</td>
+      <td>❌</td>
+      <td>✅（表記）</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">機能自体が未実装（<a href="/carapp-landing/specs/open-questions/#q-export">#Q-EXPORT</a>）</td>
+    </tr>
+    <tr class="spec-matrix__group"><td colSpan="5">🔔 サマリー・通知</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">リマインダー作成 (距離/日付)</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">整備記録から自動セットアップ可</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">プッシュ通知 (即時)</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">7 種類のメンテナンスリマインダー文言あり</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">プッシュ通知 (scheduled)</td>
+      <td>—</td>
+      <td>—</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">tz パッケージ未追加。アプリ起動時ポーリング方式（<a href="/carapp-landing/specs/notification-matrix/#既知の制約">詳細</a>）</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">任意保険・自動車税の通知</td>
+      <td>—</td>
+      <td>—</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">通知メソッド自体が無い</td>
+    </tr>
+    <tr class="spec-matrix__group"><td colSpan="5">🎮 楽しむ・続ける</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">実績・称号</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">距離・回数・エリア達成</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">広告非表示</td>
+      <td>広告あり（表記）</td>
+      <td>非表示（表記）</td>
+      <td><span class="spec-badge spec-badge--missing">❌</span></td>
+      <td class="spec-matrix__note">広告 SDK 未組み込み（<a href="/carapp-landing/specs/open-questions/#q-ads">#Q-ADS</a>）</td>
+    </tr>
+    <tr class="spec-matrix__group"><td colSpan="5">⚙️ 課金・基盤</td></tr>
+    <tr>
+      <td class="spec-matrix__feature">RevenueCat 連携</td>
+      <td>—</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">entitlement: <code>premium</code></td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">購入の復元</td>
+      <td>—</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">RevenueCat 経由</td>
+    </tr>
+    <tr>
+      <td class="spec-matrix__feature">空状態 / エラー / 権限拒否</td>
+      <td>各画面ごと</td>
+      <td>各画面ごと</td>
+      <td><span class="spec-badge spec-badge--draft">🔄</span></td>
+      <td class="spec-matrix__note">仕様書未着手（要作成）</td>
+    </tr>
+  </tbody>
+</table>
+
+## 集計（実装状態の分布）
+
+<div class="spec-grid">
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">✅ 実装済み</span>
+      <span class="spec-badge spec-badge--ok">14</span>
+    </div>
+    <p class="spec-card__desc">全機能の中で動作確認済み。MVP として出せる機能群。</p>
+  </div>
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">⚠️ 部分実装</span>
+      <span class="spec-badge spec-badge--partial">1</span>
+    </div>
+    <p class="spec-card__desc">ドライブスコア（仕様書未整備）。</p>
+  </div>
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">❌ 未実装</span>
+      <span class="spec-badge spec-badge--missing">6</span>
+    </div>
+    <p class="spec-card__desc">車両台数制限・統計詳細差分・データエクスポート・scheduled 通知・税金保険通知・広告非表示。LP 表記との乖離リスク大。</p>
+  </div>
+  <div class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🔄 設計中</span>
+      <span class="spec-badge spec-badge--draft">1</span>
+    </div>
+    <p class="spec-card__desc">空状態・エラーフロー仕様。</p>
+  </div>
+</div>
+
+## リリース判断のヒント
+
+「Free 版を有料化しても良いか」「Premium の付加価値が成立するか」を見るときの注目ポイント:
+
+1. **Premium 限定機能で実装済みなのは AI OCR の月次差分（3 → 30）のみ**。それ以外（車両台数・エクスポート・広告非表示）は表記止まり
+2. **Free でも全機能ほぼ使える状態**。Premium にお金を払う動機が OCR 上限解放だけになっている
+3. リリース判断としては (a) 表記を実装に合わせる / (b) 実装を表記に合わせる の二択。それぞれ [open-questions](/carapp-landing/specs/open-questions/) で議論

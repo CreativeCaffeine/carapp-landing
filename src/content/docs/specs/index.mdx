@@ -1,0 +1,116 @@
+---
+title: 内部仕様書（PO・デザイナー向け）
+description: ユーザー向け guide には載せない実装仕様・閾値・通知文言・実装状況のギャップを集約する。
+sidebar:
+  hidden: true
+---
+
+<div class="spec-banner">
+  <span class="spec-banner__icon">🔒</span>
+  <span><strong>内部向けドキュメント</strong> — sidebar / 検索 / 検索エンジンから除外しています。URL を知っていれば誰でも閲覧可能なので、機微情報は載せないこと。</span>
+</div>
+
+このセクションは **PO・デザイナー・QA・エンジニア間で仕様をすり合わせるための内部仕様書** です。エンドユーザー向けの説明は [機能ガイド](/carapp-landing/guide/) を参照してください。
+
+## まずはここから
+
+<div class="spec-grid">
+  <a href="/carapp-landing/specs/status-matrix/" class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">📊 ステータスマトリクス</span>
+      <span class="spec-badge spec-badge--ok">最新</span>
+    </div>
+    <p class="spec-card__desc">全機能 × Free/Premium × 実装状態を 1 枚で俯瞰。リリース判断会議のメイン資料。</p>
+  </a>
+  <a href="/carapp-landing/specs/open-questions/" class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">❓ オープン課題一覧</span>
+      <span class="spec-badge spec-badge--partial">確認待ち多数</span>
+    </div>
+    <p class="spec-card__desc">各仕様書に散らばっている「PO 確認事項」を集約。優先度・状態でトリアージ。</p>
+  </a>
+</div>
+
+## 個別仕様書
+
+<div class="spec-grid">
+  <a href="/carapp-landing/specs/notification-matrix/" class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🔔 通知マトリクス</span>
+      <span class="spec-badge spec-badge--partial">部分実装</span>
+    </div>
+    <p class="spec-card__desc">通知チャネル・API・文言・トリガー条件。scheduled push は未実装の旨を記録。</p>
+  </a>
+  <a href="/carapp-landing/specs/subscription-limits/" class="spec-card">
+    <div class="spec-card__head">
+      <span class="spec-card__title">💎 サブスクリプション制限値</span>
+      <span class="spec-badge spec-badge--partial">表記 vs 実装ギャップあり</span>
+    </div>
+    <p class="spec-card__desc">Free/Premium の機能差を実装ベースで整理。OCR は実装済み、車両台数・エクスポート・広告は未エンフォース。</p>
+  </a>
+</div>
+
+## 今後追加予定
+
+<div class="spec-grid">
+  <div class="spec-card" style="opacity:0.6">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🚗 auto-record-thresholds</span>
+      <span class="spec-badge spec-badge--draft">設計中</span>
+    </div>
+    <p class="spec-card__desc">GPS 自動記録の速度閾値・確認回数・cooldown。</p>
+  </div>
+  <div class="spec-card" style="opacity:0.6">
+    <div class="spec-card__head">
+      <span class="spec-card__title">⏰ reminder-timing</span>
+      <span class="spec-badge spec-badge--draft">設計中</span>
+    </div>
+    <p class="spec-card__desc">距離ベース・日付ベースのリマインダーチェックタイミング。</p>
+  </div>
+  <div class="spec-card" style="opacity:0.6">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🚧 error-empty-states</span>
+      <span class="spec-badge spec-badge--draft">設計中</span>
+    </div>
+    <p class="spec-card__desc">各画面の空状態・権限拒否・OCR 失敗時のフロー。</p>
+  </div>
+  <div class="spec-card" style="opacity:0.6">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🗺️ screen-transitions</span>
+      <span class="spec-badge spec-badge--draft">設計中</span>
+    </div>
+    <p class="spec-card__desc">画面遷移マップ（モーダル / シート / スワイプバック）。</p>
+  </div>
+  <div class="spec-card" style="opacity:0.6">
+    <div class="spec-card__head">
+      <span class="spec-card__title">🏆 drive-scoring</span>
+      <span class="spec-badge spec-badge--draft">設計中</span>
+    </div>
+    <p class="spec-card__desc">ドライブスコアの算出式と各パラメータの重み。</p>
+  </div>
+</div>
+
+## バッジの意味
+
+<p>
+  <span class="spec-badge spec-badge--ok">✅ 実装済み</span>{' '}
+  コードでエンフォースされ、想定通りに動く{' '}
+  <span class="spec-badge spec-badge--partial">⚠️ 部分実装</span>{' '}
+  一部のみ実装、または LP 表記と乖離あり{' '}
+  <span class="spec-badge spec-badge--missing">❌ 未実装</span>{' '}
+  仕様はあるがコードに無い{' '}
+  <span class="spec-badge spec-badge--draft">🔄 設計中</span>{' '}
+  ドキュメント自体が未着手{' '}
+  <span class="spec-badge spec-badge--na">— 該当なし</span>{' '}
+  そもそも対象外
+</p>
+
+## ドキュメントの書式
+
+新規仕様書を作るときは [`_template.md`](https://github.com/CreativeCaffeine/carapp-landing/blob/main/src/content/docs/specs/_template.md) をコピーしてください（リポジトリ上で参照、ビルドからは除外されています）。
+
+各仕様書の冒頭には以下のメタ情報を入れます:
+
+- **対応コード**: `lib/services/xxx.dart` への直リンク
+- **最終確認日**: 数値が実装と整合しているか確認した日付
+- **ステータス**: 実装済み / 部分実装 / 未実装 / 設計中
