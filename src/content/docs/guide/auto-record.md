@@ -7,6 +7,8 @@ description: Bluetooth・GPS による自動ドライブ検知
 
 毎回手動で「記録開始」を押すのを忘れがちな方向けに、**自動でドライブ記録を開始する仕組み** を用意しています。
 
+![自動記録の設定画面](/carapp-landing/screens/auto-record-settings.png)
+
 ### 自動記録の方式
 
 | 方式 | 仕組み | バッテリー消費 |
