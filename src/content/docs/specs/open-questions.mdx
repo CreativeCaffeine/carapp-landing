@@ -129,6 +129,24 @@ sidebar:
       <span>状態: 未着手</span>
     </div>
   </div>
+
+  <div class="spec-question" id="q-reminder-coverage">
+    <div class="spec-question__id">Q-REMINDER<br/>-COVERAGE</div>
+    <div class="spec-question__body">
+      <strong>整備サブカテゴリと reminder.type のカバレッジを揃える</strong>
+      <br/>
+      整備記録保存時に対応するリマインダーの <code>nextDueDate</code> / <code>nextDueOdometer</code> を更新する仕組み（issue <a href="https://github.com/CreativeCaffeine/carapp/issues/149">#149</a>）を入れたが、<code>Reminder.type</code> のキーは <code>oil / tire / battery / inspection / aircon / shaken / custom</code> の 7 種のみ。整備サブカテゴリのうち「ブレーキ」「ワイパー」「修理」「板金・塗装」「部品・用品購入」「カスタム・パーツ取付」には対応する標準 reminder.type が無く、これらを記録してもリマインダー側は何も更新されない。
+      <br/>
+      <em>選択肢:</em> (a) 標準 reminder.type を増やす（例: <code>brake</code>, <code>wiper</code>）→ <code>reminder_item_selection_screen.dart</code> のデフォルト reminder 定義と各種マッピング側を拡張 / (b) これらの記録は「リマインダー連動なし」と仕様で明示し、ユーザーが必要なら custom reminder を作る運用にする / (c) サブカテゴリ → reminder.type マッピングを別データとして集中管理（現状はマッピング関数）
+      <br/>
+      <em>影響:</em> 整備記録のうちリマインダー連動範囲がユーザーに伝わっていない。設定画面側で「リマインダー対応の項目」を視覚的に区別する UX も併せて検討。
+    </div>
+    <div class="spec-question__meta">
+      <span class="spec-badge spec-badge--partial">🟡 中</span>
+      <span>担当: PO + Eng</span>
+      <span>状態: 未着手</span>
+    </div>
+  </div>
 </div>
 
 ## 🔵 低優先度（後で良い）
@@ -190,9 +208,9 @@ sidebar:
   <div class="spec-card">
     <div class="spec-card__head">
       <span class="spec-card__title">🟡 中優先度</span>
-      <span class="spec-badge spec-badge--partial">3</span>
+      <span class="spec-badge spec-badge--partial">4</span>
     </div>
-    <p class="spec-card__desc">マーケ表記との整合 + 機能拡張候補。Q-STATS-DIFF / Q-ADS / Q-INS-TAX-NOTIFY。</p>
+    <p class="spec-card__desc">マーケ表記との整合 + 機能拡張候補。Q-STATS-DIFF / Q-ADS / Q-INS-TAX-NOTIFY / Q-REMINDER-COVERAGE。</p>
   </div>
   <div class="spec-card">
     <div class="spec-card__head">
