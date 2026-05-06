@@ -317,3 +317,91 @@ a.lp-btn--ghost {
 .lp-footer p {
 	color: #a8a3b3 !important;
 }
+
+/* ===== Sidebar collapse toggle (desktop only) ===== */
+@media (min-width: 50rem) {
+	html[data-sidebar-collapsed="true"] nav.sidebar {
+		display: none !important;
+	}
+
+	/* Let content fill the available main-pane width */
+	html[data-sidebar-collapsed="true"] {
+		--sl-content-width: 100% !important;
+	}
+
+	/* main-frame: remove the left padding that reserved sidebar space */
+	html[data-sidebar-collapsed="true"] .main-frame {
+		padding-inline-start: 0 !important;
+	}
+
+	/* Two-column layout (no right TOC, or below 72rem) */
+	html[data-sidebar-collapsed="true"] .main-pane {
+		width: 100% !important;
+	}
+
+	/* Three-column layout: fixed TOC width, content fills the remainder */
+	html[data-sidebar-collapsed="true"][data-has-sidebar][data-has-toc] .main-pane {
+		width: calc(100% - 20rem) !important;
+	}
+
+	html[data-sidebar-collapsed="true"] .right-sidebar-container {
+		width: 20rem !important;
+	}
+
+	/* Lift the hardcoded 720px cap on .sl-markdown-content when collapsed */
+	html[data-sidebar-collapsed="true"] :not([data-has-hero]) .sl-markdown-content {
+		max-width: 100% !important;
+	}
+
+	/* Stretch tables to fill the wider content area when collapsed */
+	html[data-sidebar-collapsed="true"] .sl-markdown-content table {
+		width: 100% !important;
+	}
+}
+
+@media (min-width: 50rem) {
+	.sidebar-toggle {
+		position: fixed;
+		top: calc(var(--sl-nav-height, 3.75rem) + 1.25rem);
+		left: var(--sl-sidebar-width, 18.75rem);
+		z-index: 50;
+		width: 26px;
+		height: 56px;
+		margin-left: -13px;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fff !important;
+		color: #6d28d9 !important;
+		border: 1px solid #ddd6fe !important;
+		border-radius: 999px;
+		cursor: pointer;
+		box-shadow: 0 4px 12px rgba(109, 40, 217, 0.12) !important;
+		transition: left 0.2s ease, background 0.15s ease;
+	}
+
+	html[data-sidebar-collapsed="true"] .sidebar-toggle {
+		left: 0 !important;
+		margin-left: 0 !important;
+		border-radius: 0 999px 999px 0;
+	}
+
+	.sidebar-toggle:hover {
+		background: #f5f3ff !important;
+	}
+
+	.sidebar-toggle svg {
+		transition: transform 0.2s ease;
+	}
+
+	html[data-sidebar-collapsed="true"] .sidebar-toggle svg {
+		transform: rotate(180deg);
+	}
+}
+
+@media (max-width: 50rem) {
+	.sidebar-toggle {
+		display: none !important;
+	}
+}

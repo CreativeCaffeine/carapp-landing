@@ -26,6 +26,14 @@ export default defineConfig({
 					content: `document.documentElement.setAttribute('data-theme', 'light');localStorage.setItem('starlight-theme', 'light');`,
 				},
 				{
+					tag: 'script',
+					content: `(function(){try{var s=localStorage.getItem('sidebar-collapsed');var c=s===null?location.pathname.indexOf('/specs/')>-1:s==='true';document.documentElement.setAttribute('data-sidebar-collapsed',String(c));}catch(e){}})();`,
+				},
+				{
+					tag: 'script',
+					content: `document.addEventListener('DOMContentLoaded',function(){var b=document.createElement('button');b.className='sidebar-toggle';b.type='button';b.setAttribute('aria-label','サイドバーを折りたたむ');b.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41Z"/></svg>';b.addEventListener('click',function(){var h=document.documentElement;var n=h.getAttribute('data-sidebar-collapsed')!=='true';h.setAttribute('data-sidebar-collapsed',String(n));try{localStorage.setItem('sidebar-collapsed',String(n));}catch(e){}b.setAttribute('aria-label',n?'サイドバーを開く':'サイドバーを折りたたむ');});var init=document.documentElement.getAttribute('data-sidebar-collapsed')==='true';b.setAttribute('aria-label',init?'サイドバーを開く':'サイドバーを折りたたむ');document.body.appendChild(b);});`,
+				},
+				{
 					tag: 'link',
 					attrs: { rel: 'stylesheet', href: '/carapp-landing/styles/override.css' },
 				},
@@ -34,7 +42,6 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'はじめに',
-					collapsed: true,
 					items: [
 						{ label: 'はじめに', slug: 'guide/getting-started' },
 						{ label: '機能一覧', slug: 'guide' },
@@ -42,7 +49,6 @@ export default defineConfig({
 				},
 				{
 					label: '車両・記録',
-					collapsed: true,
 					items: [
 						{ label: '車両を管理する', slug: 'guide/vehicles' },
 						{ label: '車両を登録する', slug: 'guide/add-vehicle' },
@@ -57,7 +63,6 @@ export default defineConfig({
 				},
 				{
 					label: 'ドライブ・移動',
-					collapsed: true,
 					items: [
 						{ label: 'ドライブを記録する', slug: 'guide/drive' },
 						{ label: '自動記録を設定する', slug: 'guide/auto-record' },
@@ -65,14 +70,12 @@ export default defineConfig({
 				},
 				{
 					label: '入力支援',
-					collapsed: true,
 					items: [
 						{ label: 'OCRで読み取る', slug: 'guide/ocr' },
 					],
 				},
 				{
 					label: 'サマリー・通知',
-					collapsed: true,
 					items: [
 						{ label: '費用を確認する', slug: 'guide/stats' },
 						{ label: 'リマインダーを設定する', slug: 'guide/reminders' },
@@ -80,14 +83,12 @@ export default defineConfig({
 				},
 				{
 					label: 'その他',
-					collapsed: true,
 					items: [
 						{ label: 'プレミアムプラン', slug: 'guide/subscription' },
 					],
 				},
 				{
 					label: 'よくある質問',
-					collapsed: true,
 					items: [
 						{ label: 'FAQ', slug: 'faq/general' },
 					],
