@@ -34,6 +34,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'はじめに',
+					collapsed: true,
 					items: [
 						{ label: 'はじめに', slug: 'guide/getting-started' },
 						{ label: '機能一覧', slug: 'guide' },
@@ -41,6 +42,7 @@ export default defineConfig({
 				},
 				{
 					label: '車両・記録',
+					collapsed: true,
 					items: [
 						{ label: '車両を管理する', slug: 'guide/vehicles' },
 						{ label: '車両を登録する', slug: 'guide/add-vehicle' },
@@ -55,6 +57,7 @@ export default defineConfig({
 				},
 				{
 					label: 'ドライブ・移動',
+					collapsed: true,
 					items: [
 						{ label: 'ドライブを記録する', slug: 'guide/drive' },
 						{ label: '自動記録を設定する', slug: 'guide/auto-record' },
@@ -62,12 +65,14 @@ export default defineConfig({
 				},
 				{
 					label: '入力支援',
+					collapsed: true,
 					items: [
 						{ label: 'OCRで読み取る', slug: 'guide/ocr' },
 					],
 				},
 				{
 					label: 'サマリー・通知',
+					collapsed: true,
 					items: [
 						{ label: '費用を確認する', slug: 'guide/stats' },
 						{ label: 'リマインダーを設定する', slug: 'guide/reminders' },
@@ -75,12 +80,14 @@ export default defineConfig({
 				},
 				{
 					label: 'その他',
+					collapsed: true,
 					items: [
 						{ label: 'プレミアムプラン', slug: 'guide/subscription' },
 					],
 				},
 				{
 					label: 'よくある質問',
+					collapsed: true,
 					items: [
 						{ label: 'FAQ', slug: 'faq/general' },
 					],
