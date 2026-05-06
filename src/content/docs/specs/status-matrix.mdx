@@ -7,7 +7,12 @@ sidebar:
 
 <div class="spec-banner">
   <span class="spec-banner__icon">📊</span>
-  <span><strong>最終更新: 2026-05-05</strong> — 数値とエンフォース状態は実装に基づく。マーケティング表記とのギャップは「実装状態」列で確認。</span>
+  <span><strong>最終更新: 2026-05-06（v0.4.0 反映）</strong> — 数値とエンフォース状態は実装に基づく。マーケティング表記とのギャップは「実装状態」列で確認。</span>
+</div>
+
+<div class="spec-banner">
+  <span class="spec-banner__icon">🚀</span>
+  <span><strong>v0.4.0 で解消</strong> — #115 (速度分布範囲) / #116 (日付またぎ) / #117 (天気機能撤去) / #142 (ドライブ終了UX) / #147 (autoTrigger 競合 mutex) / #148 (整備サブカテゴリ詳細) / #149 (整備保存後 reminder 更新) / #150 (起動時ポーリング) / #152 (サブスクexpiry parse) / #155 (給油フォーム検証) / #162 (車検重複整理) / #163 (tripExpense 集計) / #164 (集計戦略統一)。<br/><strong>v0.4.0 で UI 撤去</strong> — #183 (実績・称号ページ)。</span>
 </div>
 
 ## 凡例
@@ -46,21 +51,21 @@ sidebar:
       <td>無制限</td>
       <td>無制限</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">満タン給油同士の燃費自動計算込み（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/153">#153</a> テスト追加 / <a href="https://github.com/CreativeCaffeine/carapp/issues/155">#155</a> 入力検証）</td>
+      <td class="spec-matrix__note">満タン給油同士の燃費自動計算込み。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/153">#153</a> 燃費計算ユニットテスト追加 / <a href="https://github.com/CreativeCaffeine/carapp/issues/155">#155</a> 入力検証（給油量 0–200 L / 単価 0–1000 円・ODO 逆行警告）対応済み</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">メンテナンス記録</td>
       <td>無制限</td>
       <td>無制限</td>
-      <td><span class="spec-badge spec-badge--partial">⚠️</span></td>
-      <td class="spec-matrix__note">10 サブカテゴリのうち 4 種（オイル交換 / タイヤローテ / ブレーキ / ワイパー）は詳細フィールド未定義（<a href="https://github.com/CreativeCaffeine/carapp/issues/148">#148</a>）。整備保存後の Reminder 自動更新が呼ばれていない（<a href="https://github.com/CreativeCaffeine/carapp/issues/149">#149</a>）</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">10 サブカテゴリすべての詳細フィールド定義済み。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/148">#148</a>（オイル / タイヤローテ / ブレーキ / ワイパー詳細フィールド）と <a href="https://github.com/CreativeCaffeine/carapp/issues/149">#149</a>（整備保存後 <code>updateAfterService()</code> 呼び出し）が解決</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">洗車・税金保険・高速料金・書類</td>
       <td>無制限</td>
       <td>無制限</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">記録機能本体は全プラン共通（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/161">#161</a> 税金/保険/駐車のフィールド整合 / <a href="https://github.com/CreativeCaffeine/carapp/issues/162">#162</a> 車検重複 / <a href="https://github.com/CreativeCaffeine/carapp/issues/163">#163</a> tripExpense 月次集計漏れ）</td>
+      <td class="spec-matrix__note">記録機能本体は全プラン共通。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/162">#162</a>（車検重複: maintenance/document の住み分け明示）、<a href="https://github.com/CreativeCaffeine/carapp/issues/163">#163</a>（tripExpense 月次集計）解決。残課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/161">#161</a> 税金/保険/駐車のフィールド整合</td>
     </tr>
     <tr class="spec-matrix__group"><td colSpan="5">🛣️ ドライブ・移動</td></tr>
     <tr>
@@ -68,28 +73,28 @@ sidebar:
       <td>✅</td>
       <td>✅</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">GPS 走行ルート + 距離・時間記録（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/156">#156</a> 復元/タイムアウト/距離丸め）</td>
+      <td class="spec-matrix__note">GPS 走行ルート + 距離・時間記録。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/115">#115</a>（速度分布の範囲表記）/ <a href="https://github.com/CreativeCaffeine/carapp/issues/116">#116</a>（日付またぎ表示）/ <a href="https://github.com/CreativeCaffeine/carapp/issues/117">#117</a>（天気機能撤去）/ <a href="https://github.com/CreativeCaffeine/carapp/issues/142">#142</a>（スワイプ終了 + 短時間 3 択）対応。残課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/156">#156</a> 復元/タイムアウト/距離丸め</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">自動記録 (GPS)</td>
       <td>✅</td>
       <td>✅</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">速度閾値 20 km/h、停車 cooldown 3 分（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> 3トリガー競合 / <a href="https://github.com/CreativeCaffeine/carapp/issues/159">#159</a> 加速度閾値・復旧）</td>
+      <td class="spec-matrix__note">速度閾値 20 km/h、停車 cooldown 3 分。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> startDrive 競合 mutex + stale pendingStop リセット解決。残課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/159">#159</a> 加速度閾値・復旧</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">自動記録 (Bluetooth)</td>
       <td>✅</td>
       <td>✅</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">カーオーディオ接続検知（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> 3トリガー競合 / <a href="https://github.com/CreativeCaffeine/carapp/issues/157">#157</a> Android/iOS 状態遷移統一）</td>
+      <td class="spec-matrix__note">Android のみ対応。bonded device picker 実装済（カーオーディオを設定画面から選択可）。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> 解決。残課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/157">#157</a> Android/iOS 状態遷移統一</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">自動記録 (iBeacon)</td>
       <td>✅</td>
       <td>✅</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">BLE タグ近接検知（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> 3トリガー競合 / <a href="https://github.com/CreativeCaffeine/carapp/issues/158">#158</a> 権限・cooldown・retry）</td>
+      <td class="spec-matrix__note">BLE タグ近接検知。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/147">#147</a> 解決。残課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/158">#158</a> 権限・cooldown・retry</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">ドライブスコア</td>
@@ -118,7 +123,7 @@ sidebar:
       <td>✅</td>
       <td>✅</td>
       <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">月別/年別維持費・カテゴリ内訳（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/163">#163</a> tripExpense 集計漏れ / <a href="https://github.com/CreativeCaffeine/carapp/issues/164">#164</a> 0件表示・集計戦略統一）</td>
+      <td class="spec-matrix__note">月別/年別維持費・6 カテゴリ内訳（給油/整備/洗車/税金保険/高速料金/その他）。v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/163">#163</a> tripExpense 集計 / <a href="https://github.com/CreativeCaffeine/carapp/issues/164">#164</a> 集計戦略統一（<code>aggregateByCategory</code> 共通化 + 旧形式 amount regex 撤去）解決</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">統計・グラフ（詳細）</td>
@@ -139,8 +144,8 @@ sidebar:
       <td class="spec-matrix__feature">リマインダー作成 (距離/日付)</td>
       <td>✅</td>
       <td>✅</td>
-      <td><span class="spec-badge spec-badge--partial">⚠️</span></td>
-      <td class="spec-matrix__note">整備記録からの自動セットアップは <code>updateAfterService()</code> が呼ばれておらず動作していない（<a href="https://github.com/CreativeCaffeine/carapp/issues/149">#149</a>）</td>
+      <td><span class="spec-badge spec-badge--ok">✅</span></td>
+      <td class="spec-matrix__note">v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/149">#149</a> 解決 — 整備記録の保存・更新時に <code>updateAfterService()</code> が呼ばれるようになった</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">プッシュ通知 (即時)</td>
@@ -151,10 +156,10 @@ sidebar:
     </tr>
     <tr>
       <td class="spec-matrix__feature">プッシュ通知 (scheduled)</td>
-      <td>—</td>
-      <td>—</td>
-      <td><span class="spec-badge spec-badge--missing">❌</span></td>
-      <td class="spec-matrix__note">tz パッケージ未追加。代替の起動時ポーリングも未実装（<a href="https://github.com/CreativeCaffeine/carapp/issues/150">#150</a>）。<a href="/carapp-landing/specs/notification-matrix/#既知の制約">詳細</a></td>
+      <td>✅</td>
+      <td>✅</td>
+      <td><span class="spec-badge spec-badge--partial">⚠️</span></td>
+      <td class="spec-matrix__note">v0.4.0 で <a href="https://github.com/CreativeCaffeine/carapp/issues/150">#150</a> 起動時リマインダーポーリング実装。tz パッケージによる完全な scheduled 通知は未対応だが、起動時に未配信分をチェックする代替が機能。<a href="/carapp-landing/specs/notification-matrix/#既知の制約">詳細</a></td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">任意保険・自動車税の通知</td>
@@ -166,10 +171,10 @@ sidebar:
     <tr class="spec-matrix__group"><td colSpan="5">🎮 楽しむ・続ける</td></tr>
     <tr>
       <td class="spec-matrix__feature">実績・称号</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td><span class="spec-badge spec-badge--ok">✅</span></td>
-      <td class="spec-matrix__note">距離・回数・エリア達成（品質課題: <a href="https://github.com/CreativeCaffeine/carapp/issues/166">#166</a> activeVehicle 切替/timezone）</td>
+      <td>—</td>
+      <td>—</td>
+      <td><span class="spec-badge spec-badge--missing">撤去</span></td>
+      <td class="spec-matrix__note">v0.4.0 で UI 撤去（<a href="https://github.com/CreativeCaffeine/carapp/issues/183">#183</a>）。記録ロジック・DB は保持</td>
     </tr>
     <tr>
       <td class="spec-matrix__feature">広告非表示</td>
