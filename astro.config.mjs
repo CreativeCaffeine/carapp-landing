@@ -71,7 +71,6 @@ export default defineConfig({
 					items: [
 						{ label: '費用を確認する', slug: 'guide/stats' },
 						{ label: 'リマインダーを設定する', slug: 'guide/reminders' },
-						{ label: '実績・称号', slug: 'guide/achievements' },
 					],
 				},
 				{

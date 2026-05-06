@@ -40,7 +40,6 @@ sidebar:
 | データエクスポート（CSV/PDF） | Free: ❌ / Premium: ✅ | エクスポート機能自体が未実装 | LP の記載を一旦下げるべき |
 | 統計・グラフ詳細 | Free: 基本 / Premium: 詳細 | 差分なし | 同上 |
 | 広告非表示 | Free: 広告あり / Premium: 非表示 | 広告 SDK 未組み込み | 同上 |
-| 実績・称号 | Free / Premium 共通 | OK（差なし） | OK |
 
 ## RevenueCat 設定
 
