@@ -88,6 +88,21 @@ export default defineConfig({
 					],
 				},
 				{
+					label: '仕様書: 現状スナップショット',
+					items: [
+						{ label: '画面一覧', slug: 'specs/snapshot/screens-current' },
+						{ label: 'データベース設計', slug: 'specs/snapshot/db-current' },
+						{ label: 'データフロー', slug: 'specs/snapshot/data-flow-current' },
+						{ label: 'ナビゲーション', slug: 'specs/snapshot/navigation-current' },
+					],
+				},
+				{
+					label: '仕様書: 差分設計',
+					items: [
+						{ label: 'Issue #227-231 適用後', slug: 'specs/diff/after-issues-227-231' },
+					],
+				},
+				{
 					label: 'よくある質問',
 					items: [
 						{ label: 'FAQ', slug: 'faq/general' },
