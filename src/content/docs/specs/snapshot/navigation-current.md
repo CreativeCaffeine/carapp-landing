@@ -86,7 +86,8 @@ flowchart TB
 
 ## CLAUDE.md ナビゲーション規則 (再掲)
 
-- **画面遷移のトランジションはスライド (右から) に統一**。`_slidePage()` (CupertinoPage) を使う。`_fadePage()` はタブ切り替え専用。
+- **画面遷移のトランジションはスライド (右から) に統一**。`_slidePage()` (CupertinoPage) を使う。`_fadePage()` は原則タブ切り替え専用。
 - タブ画面 (`/`, `/logs`, `/stats`, `/settings`) は ShellRoute 内で `_fadePage()`。
 - それ以外の遷移先 (詳細・一覧・フォーム) は **ShellRoute の外** に GoRoute を定義し `_slidePage()` を使う。これにより CupertinoPage のネイティブ指追従スワイプバックが有効になる。
 - `SwipeBackWrapper` は ShellRoute 内の画面にのみ使用する (ShellRoute 外なら不要)。
+- **例外**: `/expanded-map/:sessionId` (拡大マップ) はタブ画面ではないが `_fadePage()` を採用している。地図 FAB 的な「同じセッションを別表示で覗き込む」UX を狙ったもの。CLAUDE.md の規則を厳密に読むと矛盾するため、規則を更新する際に「フェード使用ケース」を明示する候補。

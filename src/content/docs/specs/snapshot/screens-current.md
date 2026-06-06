@@ -30,12 +30,12 @@ description: "carapp 実装の全画面マップ (コード起点・2026-06 時�
 
 | 画面 | ファイル | パス | 遷移種類 | 主要 Provider | 主要遷移先 | Figma v2 状況 |
 |------|---------|------|---------|--------------|-----------|---------------|
-| ドライブ中 | `lib/screens/driving_screen.dart` | `/driving` | slide | `driveProvider`, `isDrivingProvider` | `/drive-result/:id` | 全面刷新中 |
-| ドライブ結果 | `lib/screens/drive_result_screen.dart` | `/drive-result/:sessionId` | slide (ShellRoute 内) | `driveSessionProvider` | `/drive-detail/:id`, `/drive-edit` | 全面刷新中 |
-| ドライブ詳細 | `lib/screens/drive_detail_screen.dart` | `/drive-detail/:sessionId` | slide | `driveSessionProvider` | `/drive-edit`, `/expanded-map/:id` | 未着手 |
+| ドライブ中 | `lib/screens/driving_screen.dart` | `/driving` | slide | `driveProvider`, `isDrivingProvider` | `/drive-result/:sessionId` | 全面刷新中 |
+| ドライブ結果 | `lib/screens/drive_result_screen.dart` | `/drive-result/:sessionId` | slide (ShellRoute 内) | `driveSessionProvider` | `/drive-detail/:sessionId`, `/drive-edit` | 全面刷新中 |
+| ドライブ詳細 | `lib/screens/drive_detail_screen.dart` | `/drive-detail/:sessionId` | slide | `driveSessionProvider` | `/drive-edit`, `/expanded-map/:sessionId` | 未着手 |
 | ドライブ編集 | `lib/screens/drive_edit_screen.dart` | `/drive-edit` (extra: DriveSession) | slide | `driveSessionProvider` | pop | 未着手 |
 | 拡大マップ | `lib/screens/expanded_map_screen.dart` | `/expanded-map/:sessionId` | fade | `driveLocationsProvider` | pop | 未着手 |
-| ドライブの思い出 (旧「愛車ログ」) | `lib/screens/drive_memories_screen.dart` | `/memories` | slide | `driveSessionsProvider` | `/drive-detail/:id` | **Issue #231 で廃止予定** |
+| ドライブの思い出 (旧「愛車ログ」) | `lib/screens/drive_memories_screen.dart` | `/memories` | slide | `driveSessionsProvider` | `/drive-detail/:sessionId` | **Issue #231 で廃止予定** |
 | ドライブ手動記録 | `lib/screens/drive_record_screen.dart` | (modal) | - | `driveProvider` | pop | 未着手 |
 
 ## 記録系画面

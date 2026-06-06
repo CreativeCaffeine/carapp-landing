@@ -6,7 +6,7 @@ description: "走行距離整合性 / バリデーション / ホーム動線 / 
 > 現状スナップショット ([screens](/carapp-landing/specs/snapshot/screens-current/) / [db](/carapp-landing/specs/snapshot/db-current/) / [data-flow](/carapp-landing/specs/snapshot/data-flow-current/) / [navigation](/carapp-landing/specs/snapshot/navigation-current/)) に対して、Issue #227-231 を適用した後の差分設計をまとめる。
 >
 > **対象 Issue**:
-> - [#227 走行距離整合性 (OdometerSetting + 削除ロールバック)](https://github.com/CreativeCaffeine/carapp/issues/227)
+> - [#227 走行距離整合性 (OdometerSettings + 削除ロールバック)](https://github.com/CreativeCaffeine/carapp/issues/227)
 > - [#228 走行距離下限バリデーション](https://github.com/CreativeCaffeine/carapp/issues/228)
 > - [#229 ホームアイコン直接遷移](https://github.com/CreativeCaffeine/carapp/issues/229)
 > - [#230 二重加算防止 確認 Popup](https://github.com/CreativeCaffeine/carapp/issues/230)
@@ -15,15 +15,15 @@ description: "走行距離整合性 / バリデーション / ホーム動線 / 
 > **最終確認日**: 2026-06-06
 > **ステータス**: 設計中
 
-## Issue #227: 走行距離整合性 (OdometerSetting + 削除ロールバック)
+## Issue #227: 走行距離整合性 (OdometerSettings + 削除ロールバック)
 
 ### Before / After
 
 | 項目 | Before (現状) | After (#227 適用後) |
 |------|--------------|---------------------|
 | テーブル定義 | `Vehicles.odometer` が唯一の現在 ODO | 新テーブル `OdometerSettings`、`Vehicles.odometer` はキャッシュ列 |
-| odometer 書き込み箇所 | 5 箇所 (data-flow-current 参照) | **OdometerService** 経由 1 箇所に集約 + `Vehicles.odometer` の再計算 |
-| 削除時挙動 | Log 削除しても `Vehicles.odometer` は更新されず巻き戻る | 削除のたびに `Vehicles.odometer` を `max()` で再計算 (ロールバック不要) |
+| odometer 書き込み箇所 | 6 箇所 (data-flow-current 参照) | **OdometerService** 経由 1 箇所に集約 + `Vehicles.odometer` の再計算 |
+| 削除時挙動 | Log を削除しても `Vehicles.odometer` は古い高い値のまま残り、巻き戻らない (例: 10,500 のまま) | 削除のたびに `Vehicles.odometer` を `max()` で再計算し巻き戻す |
 | ホーム ODO 編集 | `Vehicles.odometer` 直接 UPDATE | `OdometerSettings.insert(source: manual)` |
 
 ### 新テーブル: OdometerSettings

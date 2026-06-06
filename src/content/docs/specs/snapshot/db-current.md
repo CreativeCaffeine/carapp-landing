@@ -119,12 +119,12 @@ description: "Drift で定義された 13 テーブルの現状 (2026-06 時点)
 | カラム | 型 | 備考 |
 |--------|---|------|
 | id | int PK | |
-| category | text | `fuel` / `maintenance` / `wash` / `other` |
+| category | text | `fuel` / `maintenance` / `cleaning` / `other` 等。`tables.dart:117` のコメントには `'wash'` と書かれているが、`RecordCategoryKey` (lib/models/record_categories.dart:10) 上の真値は `cleaning` で、新規追加時もそちらに揃える方針。コメントは古い表記の残骸であり、Issue #229/231 の周辺整理時にあわせて訂正する候補。 |
 | name | text | ユーザ定義のサブカテゴリ名 |
 | vehicleId | int? → Vehicles.id | FK (null = 全車両共通) |
 | createdAt | DateTime | |
 
-**触る画面**: QuickAddMenu, `generic_record_form_screen`。
+**触る画面**: QuickAddMenu, `generic_record_form_screen` (現状 `addCustomSubcategory` の呼び出し元はコード上に未配線 — 2026-06 時点)。
 
 ## Reminders
 
