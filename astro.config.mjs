@@ -10,6 +10,7 @@ export default defineConfig({
 		starlight({
 			title: 'ぶんぶんノート',
 			description: '愛車の管理をもっとスマートに。給油、整備、洗車、ドライブ記録を一括管理。',
+			favicon: '/favicon.png',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
@@ -21,6 +22,26 @@ export default defineConfig({
 			disable404Route: false,
 			pagefind: false,
 			head: [
+				{
+					tag: 'link',
+					attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/carapp-landing/apple-touch-icon.png' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image', content: 'https://creativecaffeine.github.io/carapp-landing/og-image.png' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:width', content: '1200' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:height', content: '630' },
+				},
+				{
+					tag: 'meta',
+					attrs: { name: 'twitter:image', content: 'https://creativecaffeine.github.io/carapp-landing/og-image.png' },
+				},
 				{
 					tag: 'script',
 					content: `document.documentElement.setAttribute('data-theme', 'light');localStorage.setItem('starlight-theme', 'light');`,
