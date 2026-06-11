@@ -24,6 +24,18 @@ export default defineConfig({
 			head: [
 				{
 					tag: 'link',
+					attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap' },
+				},
+				{
+					tag: 'link',
 					attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/carapp-landing/apple-touch-icon.png' },
 				},
 				{

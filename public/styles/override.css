@@ -301,7 +301,7 @@ a.lp-btn--ghost {
 /* ===== LP dark section — override the global dark text force ===== */
 .lp-block--dark h2,
 .lp-block--dark .lp-block__title {
-	color: #E8F0FF !important;
+	color: #F2F6FF !important;
 }
 
 .lp-block--dark p,
@@ -310,8 +310,25 @@ a.lp-btn--ghost {
 }
 
 .lp-block--dark .lp-block__label {
-	color: #8FAAFF !important;
+	color: #A8C0FF !important;
 }
+
+/* ===== LP color liberation — グローバル文字色強制から LP 要素を解放 ===== */
+.lp .lp-hero__badge { color: #3B73F6 !important; }
+.lp .lp-hero__soon { color: #3B73F6 !important; }
+.lp .lp-hero__subtitle { color: #475066 !important; }
+.lp .lp-block__label { color: #3B73F6 !important; }
+.lp .lp-block__desc { color: #475066 !important; }
+.lp .lp-tile__desc { color: #737A8C !important; }
+.lp .lp-chip { color: #3B73F6 !important; }
+.lp-block--dark .lp-block__label { color: #A8C0FF !important; }
+.lp-block--dark .lp-chip { color: #3B73F6 !important; }
+
+/* CTA カード(青グラデ上は白文字) */
+.lp-cta__card .lp-cta__title { color: #fff !important; }
+.lp-cta__card .lp-cta__desc { color: #DCE8FF !important; }
+.lp-cta__card a.lp-btn--white { color: #3B73F6 !important; }
+.lp-cta__card a.lp-btn--outline { color: #fff !important; }
 
 /* LP footer */
 .lp-footer p {
@@ -404,4 +421,9 @@ a.lp-btn--ghost {
 	.sidebar-toggle {
 		display: none !important;
 	}
+}
+
+/* LP(hero ページ)にはサイドバーがないのでトグルを出さない */
+[data-has-hero] .sidebar-toggle {
+	display: none !important;
 }

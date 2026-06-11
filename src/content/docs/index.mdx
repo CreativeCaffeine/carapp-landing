@@ -13,18 +13,19 @@ hero:
 <div class="lp">
 
 {/* ===== HERO ===== */}
+{/* 注意: テキストを含む h1/h2/p は必ず 1 行で書く(複数行にすると MDX が入れ子 <p> を生成しタグが分割される) */}
 <section class="lp-hero">
-  <p class="lp-hero__badge">ぶんぶんノート</p>
-  <h1 class="lp-hero__title">
-    愛車の記録、<br/><span class="lp-hero__gradient">ぜんぶこれ一冊。</span>
-  </h1>
-  <p class="lp-hero__subtitle">
-    給油・整備・洗車・ドライブ。<br/>愛車の管理をもっとスマートに。
-  </p>
+  <p class="lp-hero__badge"><img src="/carapp-landing/favicon.png" alt="" width="24" height="24" /> ぶんぶんノート</p>
+  <h1 class="lp-hero__title">愛車の記録、<br/><span class="lp-hero__gradient">ぜんぶこれ一冊。</span></h1>
+  <p class="lp-hero__subtitle">給油・整備・洗車・ドライブ。<br/>愛車の管理をもっとスマートに。</p>
   <div class="lp-hero__cta">
     <span class="lp-hero__soon">App Store / Google Play 近日公開</span>
   </div>
   <div class="lp-hero__image">
+    <svg class="lp-hero__route" viewBox="0 0 1000 380" aria-hidden="true">
+      <path d="M-40,330 C140,300 230,170 420,180 S700,80 880,110 1010,60 1040,50" />
+      <circle cx="880" cy="110" r="7" />
+    </svg>
     <div class="lp-hero__phones">
       <div class="lp-phone lp-phone--back">
         <img src="/carapp-landing/screens/logs.png" alt="記録一覧画面" loading="eager" />
@@ -38,21 +39,25 @@ hero:
 
 {/* ===== FEATURE 1: OCR ===== */}
 <section class="lp-block lp-block--white">
-  <div class="lp-block__text">
-    <p class="lp-block__label">AI OCR</p>
-    <h2 class="lp-block__title">撮るだけで、<br/>入力完了。</h2>
-    <p class="lp-block__desc">レシートも車検証も、カメラで撮るだけ。<br/>AIが金額・日付・項目を自動で読み取ります。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/ocr/" class="lp-link">OCRの使い方を見る →</a>
-    </div>
-  </div>
-  <div class="lp-block__image">
-    <div class="lp-block__phone-pair">
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/record-type.png" alt="記録カテゴリ" loading="lazy" />
+  <div class="lp-block__split">
+    <div class="lp-block__text">
+      <p class="lp-block__label">AI OCR</p>
+      <h2 class="lp-block__title">撮るだけで、<br/>入力完了。</h2>
+      <p class="lp-block__desc">レシートも車検証も、カメラで撮るだけ。<br/>AIが金額・日付・項目を自動で読み取ります。</p>
+      <div class="lp-block__cta">
+        <a href="/carapp-landing/guide/ocr/" class="lp-link">OCRの使い方を見る →</a>
       </div>
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/ocr.png" alt="OCRスキャン" loading="lazy" />
+    </div>
+    <div class="lp-block__image">
+      <div class="lp-block__phone-pair">
+        <span class="lp-chip lp-chip--tl">AIが自動入力</span>
+        <span class="lp-chip lp-chip--br lp-chip--fuel">給油 32.5L ・ ¥5,200</span>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/record-type.png" alt="記録カテゴリ" loading="lazy" />
+        </div>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/ocr.png" alt="OCRスキャン" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -70,6 +75,8 @@ hero:
   </div>
   <div class="lp-block__image">
     <div class="lp-block__phone-pair">
+      <span class="lp-chip lp-chip--tl">Bluetooth で自動記録</span>
+      <span class="lp-chip lp-chip--br lp-chip--score">45.2km ・ 1:24</span>
       <div class="lp-phone lp-phone--md lp-phone--dark">
         <img src="/carapp-landing/screens/driving.png" alt="ドライブ中" loading="lazy" />
       </div>
@@ -82,21 +89,24 @@ hero:
 
 {/* ===== FEATURE 3: Stats ===== */}
 <section class="lp-block lp-block--gray">
-  <div class="lp-block__text">
-    <p class="lp-block__label">費用分析</p>
-    <h2 class="lp-block__title">いくらかかってる？<br/>がすぐわかる。</h2>
-    <p class="lp-block__desc">月別・年別の維持費を自動集計。<br/>カテゴリ別の内訳も、月次レポートもひと目で。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/stats/" class="lp-link">費用の確認方法を見る →</a>
-    </div>
-  </div>
-  <div class="lp-block__image">
-    <div class="lp-block__phone-pair">
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/cost.png" alt="費用分析" loading="lazy" />
+  <div class="lp-block__split lp-block__split--reverse">
+    <div class="lp-block__text">
+      <p class="lp-block__label">費用分析</p>
+      <h2 class="lp-block__title">いくらかかってる？<br/>がすぐわかる。</h2>
+      <p class="lp-block__desc">月別・年別の維持費を自動集計。<br/>カテゴリ別の内訳も、月次レポートもひと目で。</p>
+      <div class="lp-block__cta">
+        <a href="/carapp-landing/guide/stats/" class="lp-link">費用の確認方法を見る →</a>
       </div>
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/stats.png" alt="統計" loading="lazy" />
+    </div>
+    <div class="lp-block__image">
+      <div class="lp-block__phone-pair">
+        <span class="lp-chip lp-chip--tl lp-chip--cost">今月 ¥28,450</span>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/cost.png" alt="費用分析" loading="lazy" />
+        </div>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/stats.png" alt="統計" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -155,14 +165,15 @@ hero:
 </section>
 
 {/* ===== CTA ===== */}
-<section class="lp-block lp-block--accent">
-  <div class="lp-block__text">
-    <h2 class="lp-block__title">もうすぐ、走り出します。</h2>
-    <p class="lp-block__desc">ぶんぶんノートは App Store / Google Play で近日公開予定。<br/>それまでは、使い方ガイドで機能をチェック。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/getting-started/" class="lp-link">使い方ガイド</a>
-      <a href="/carapp-landing/guide/" class="lp-link">全機能を見る</a>
-      <a href="/carapp-landing/faq/general/" class="lp-link">よくある質問</a>
+<section class="lp-cta">
+  <div class="lp-cta__card">
+    <img class="lp-cta__icon" src="/carapp-landing/apple-touch-icon.png" alt="" width="72" height="72" />
+    <h2 class="lp-cta__title">もうすぐ、走り出します。</h2>
+    <p class="lp-cta__desc">ぶんぶんノートは App Store / Google Play で近日公開予定。<br/>それまでは、使い方ガイドで機能をチェック。</p>
+    <div class="lp-cta__actions">
+      <a href="/carapp-landing/guide/getting-started/" class="lp-btn lp-btn--white">使い方ガイドを見る</a>
+      <a href="/carapp-landing/guide/" class="lp-btn lp-btn--outline">全機能を見る</a>
+      <a href="/carapp-landing/faq/general/" class="lp-btn lp-btn--outline">よくある質問</a>
     </div>
   </div>
 </section>
