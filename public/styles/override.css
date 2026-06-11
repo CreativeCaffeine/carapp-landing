@@ -4,74 +4,74 @@
 :root, :root[data-theme='dark'], html[data-theme='dark'], html {
 	--sl-color-bg: #fff !important;
 	--sl-color-bg-nav: #fff !important;
-	--sl-color-bg-sidebar: #f5f3ff !important;
-	--sl-color-text: #1a1725 !important;
-	--sl-color-text-accent: #6d28d9 !important;
-	--sl-color-white: #faf9fc !important;
-	--sl-color-gray-1: #e9e5f0 !important;
-	--sl-color-gray-2: #d4d0dc !important;
-	--sl-color-gray-3: #a8a3b3 !important;
-	--sl-color-gray-4: #78738a !important;
-	--sl-color-gray-5: #4a4558 !important;
-	--sl-color-gray-6: #2d2a36 !important;
-	--sl-color-black: #1a1725 !important;
-	--sl-color-accent-low: #f5f3ff !important;
-	--sl-color-accent: #7c3aed !important;
-	--sl-color-accent-high: #6d28d9 !important;
-	--sl-color-hairline: #ede9fe !important;
-	--sl-color-hairline-light: #f5f3ff !important;
-	--sl-color-bg-inline-code: #f5f3ff !important;
-	--sl-color-text-inline-code: #6d28d9 !important;
+	--sl-color-bg-sidebar: #E8F0FF !important;
+	--sl-color-text: #1A1A1A !important;
+	--sl-color-text-accent: #3B73F6 !important;
+	--sl-color-white: #F8FAFF !important;
+	--sl-color-gray-1: #E5EBF5 !important;
+	--sl-color-gray-2: #D0D8E4 !important;
+	--sl-color-gray-3: #9AA1B0 !important;
+	--sl-color-gray-4: #737A8C !important;
+	--sl-color-gray-5: #475066 !important;
+	--sl-color-gray-6: #2A2E38 !important;
+	--sl-color-black: #1A1A1A !important;
+	--sl-color-accent-low: #E8F0FF !important;
+	--sl-color-accent: #5A7BFA !important;
+	--sl-color-accent-high: #3B73F6 !important;
+	--sl-color-hairline: #D6E3FF !important;
+	--sl-color-hairline-light: #E8F0FF !important;
+	--sl-color-bg-inline-code: #E8F0FF !important;
+	--sl-color-text-inline-code: #3B73F6 !important;
 	color-scheme: light !important;
 	background-color: #fff !important;
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 /* ===== Global text color force ===== */
 body, main, article, section, div, p, span, li, td, th, dt, dd, label,
 summary, details, figcaption, blockquote {
-	color: #0f0d1a !important;
+	color: #14161C !important;
 }
 
 /* ===== Headings ===== */
 h1, h2, h3, h4, h5, h6 {
-	color: #0f0d1a !important;
+	color: #14161C !important;
 }
 
 /* Page title (Starlight) */
 .content-panel h1,
 [data-page-title],
 .sl-markdown-content > h1:first-of-type {
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 /* ===== Links (not LP buttons/links) ===== */
 a:not(.lp-btn):not(.lp-link):not(.lp-store-badge) {
-	color: #6d28d9 !important;
+	color: #3B73F6 !important;
 }
 
 a:not(.lp-btn):not(.lp-link):not(.lp-store-badge):hover {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 /* ===== Sidebar ===== */
 nav.sidebar a {
-	color: #4a4558 !important;
+	color: #475066 !important;
 }
 
 nav.sidebar a:hover {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 nav.sidebar a[aria-current="page"] {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 	font-weight: 700;
 }
 
 /* Sidebar section titles */
 nav.sidebar summary,
 nav.sidebar .top-level > li > details > summary {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 /* ===== Mobile sidebar / menu — force light mode ===== */
@@ -84,25 +84,25 @@ starlight-menu-button,
 [data-mobile-menu-expanded] nav.sidebar {
 	background-color: #fff !important;
 	background: #fff !important;
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 /* Mobile sidebar links */
 .sidebar-pane a,
 #starlight__sidebar a,
 .sidebar-content a {
-	color: #4a4558 !important;
+	color: #475066 !important;
 }
 
 .sidebar-pane a:hover,
 #starlight__sidebar a:hover {
-	color: #7c3aed !important;
-	background: #f5f3ff !important;
+	color: #5A7BFA !important;
+	background: #E8F0FF !important;
 }
 
 .sidebar-pane a[aria-current="page"],
 #starlight__sidebar a[aria-current="page"] {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 	font-weight: 700;
 }
 
@@ -110,21 +110,21 @@ starlight-menu-button,
 .sidebar-pane summary,
 #starlight__sidebar summary,
 .sidebar-content summary {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 	background: transparent !important;
 }
 
 .sidebar-pane .group-label,
 #starlight__sidebar .group-label {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 /* Mobile sidebar icons (hamburger/close) */
 starlight-menu-button button {
-	color: #1a1725 !important;
-	background: #f5f3ff !important;
-	border: 1px solid #ddd6fe !important;
-	box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12) !important;
+	color: #1A1A1A !important;
+	background: #E8F0FF !important;
+	border: 1px solid #C3D4FF !important;
+	box-shadow: 0 8px 24px rgba(59, 115, 246, 0.12) !important;
 }
 
 /* Mobile menu backdrop */
@@ -135,29 +135,29 @@ body[data-mobile-menu-expanded]::before {
 /* Mobile theme selector in sidebar */
 .mobile-preferences {
 	background: #fff !important;
-	border-color: #ede9fe !important;
+	border-color: #D6E3FF !important;
 }
 
 .mobile-preferences label,
 .mobile-preferences select,
 .mobile-preferences span {
-	color: #4a4558 !important;
+	color: #475066 !important;
 }
 
 /* ===== Right sidebar (TOC) ===== */
 .right-sidebar a,
 .right-sidebar-panel a,
 starlight-toc a {
-	color: #4a4558 !important;
+	color: #475066 !important;
 }
 
 starlight-toc a[aria-current="true"] {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 .right-sidebar h2,
 starlight-toc h2 {
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 /* ===== Mobile TOC dropdown — force light mode ===== */
@@ -169,102 +169,102 @@ mobile-starlight-toc .dropdown,
 mobile-starlight-toc ul {
 	background-color: #fff !important;
 	background: #fff !important;
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 mobile-starlight-toc summary {
-	color: #4a4558 !important;
-	background: #f5f3ff !important;
-	border: 1px solid #ddd6fe !important;
+	color: #475066 !important;
+	background: #E8F0FF !important;
+	border: 1px solid #C3D4FF !important;
 	border-radius: 14px !important;
-	box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12) !important;
+	box-shadow: 0 8px 24px rgba(59, 115, 246, 0.12) !important;
 }
 
 mobile-starlight-toc a {
-	color: #4a4558 !important;
+	color: #475066 !important;
 }
 
 mobile-starlight-toc a:hover {
-	color: #7c3aed !important;
+	color: #5A7BFA !important;
 }
 
 /* ===== Inline code ===== */
 code:not(pre code) {
-	background-color: #f5f3ff !important;
-	color: #6d28d9 !important;
+	background-color: #E8F0FF !important;
+	color: #3B73F6 !important;
 }
 
 /* ===== Code blocks ===== */
 pre {
-	background-color: #faf9fc !important;
-	border: 1px solid #ede9fe !important;
+	background-color: #F8FAFF !important;
+	border: 1px solid #D6E3FF !important;
 }
 
 pre code {
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 	background: transparent !important;
 }
 
 /* ===== Tables ===== */
 th {
-	background: #f5f3ff !important;
-	color: #6d28d9 !important;
+	background: #E8F0FF !important;
+	color: #3B73F6 !important;
 }
 
 td {
 	background-color: #fff !important;
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 table {
-	border-color: #ede9fe !important;
+	border-color: #D6E3FF !important;
 }
 
 /* ===== Callouts / Asides ===== */
 .starlight-aside {
-	background-color: #faf9fc !important;
-	color: #1a1725 !important;
+	background-color: #F8FAFF !important;
+	color: #1A1A1A !important;
 }
 
 .starlight-aside p,
 .starlight-aside li {
-	color: #2d2a36 !important;
+	color: #2A2E38 !important;
 }
 
 /* ===== Pagination (prev/next) ===== */
 .pagination-links a {
-	color: #6d28d9 !important;
-	border-color: #ede9fe !important;
+	color: #3B73F6 !important;
+	border-color: #D6E3FF !important;
 	background: #fff !important;
 }
 
 .pagination-links a span,
 .pagination-links a .link-title {
-	color: #1a1725 !important;
+	color: #1A1A1A !important;
 }
 
 .pagination-links a .link-page {
-	color: #6d28d9 !important;
+	color: #3B73F6 !important;
 }
 
 .pagination-links a:hover {
-	border-color: #c4b5fd !important;
-	background: #f5f3ff !important;
+	border-color: #A8C0FF !important;
+	background: #E8F0FF !important;
 }
 
 /* ===== Borders / Hairlines ===== */
 hr, .content-panel, nav.sidebar {
-	border-color: #ede9fe !important;
+	border-color: #D6E3FF !important;
 }
 
 /* ===== List markers ===== */
 li::marker {
-	color: #c4b5fd !important;
+	color: #A8C0FF !important;
 }
 
 /* ===== Muted / secondary text ===== */
 small, .meta, time, [class*="muted"] {
-	color: #78738a !important;
+	color: #737A8C !important;
 }
 
 /* ===== Footer badges ===== */
@@ -275,14 +275,14 @@ small, .meta, time, [class*="muted"] {
 }
 
 /* App Store: no built-in padding, keep small */
-.lp-footer__badges a:first-child img {
+.lp-footer__badges > :first-child img {
 	height: 34px !important;
 	width: auto !important;
 }
 
 /* Google Play: 23% of image height is transparent padding (29px top + 29px bottom out of 250px) */
 /* Black area = 76.8% of image. To match App Store 34px: 34 / 0.768 = 44px */
-.lp-footer__badges a:last-child img {
+.lp-footer__badges > :last-child img {
 	height: 44px !important;
 	width: auto !important;
 }
@@ -291,31 +291,31 @@ small, .meta, time, [class*="muted"] {
 .lp-btn--primary,
 a.lp-btn--primary {
 	color: #fff !important;
-	background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+	background: linear-gradient(135deg, #7C9CFF, #5A7BFA) !important;
 }
 
 a.lp-btn--ghost {
-	color: #6d28d9 !important;
+	color: #3B73F6 !important;
 }
 
 /* ===== LP dark section — override the global dark text force ===== */
 .lp-block--dark h2,
 .lp-block--dark .lp-block__title {
-	color: #f5f3ff !important;
+	color: #E8F0FF !important;
 }
 
 .lp-block--dark p,
 .lp-block--dark .lp-block__desc {
-	color: #d4d0e8 !important;
+	color: #C9D4EC !important;
 }
 
 .lp-block--dark .lp-block__label {
-	color: #a78bfa !important;
+	color: #8FAAFF !important;
 }
 
 /* LP footer */
 .lp-footer p {
-	color: #a8a3b3 !important;
+	color: #9AA1B0 !important;
 }
 
 /* ===== Sidebar collapse toggle (desktop only) ===== */
@@ -373,11 +373,11 @@ a.lp-btn--ghost {
 		align-items: center;
 		justify-content: center;
 		background: #fff !important;
-		color: #6d28d9 !important;
-		border: 1px solid #ddd6fe !important;
+		color: #3B73F6 !important;
+		border: 1px solid #C3D4FF !important;
 		border-radius: 999px;
 		cursor: pointer;
-		box-shadow: 0 4px 12px rgba(109, 40, 217, 0.12) !important;
+		box-shadow: 0 4px 12px rgba(59, 115, 246, 0.12) !important;
 		transition: left 0.2s ease, background 0.15s ease;
 	}
 
@@ -388,7 +388,7 @@ a.lp-btn--ghost {
 	}
 
 	.sidebar-toggle:hover {
-		background: #f5f3ff !important;
+		background: #E8F0FF !important;
 	}
 
 	.sidebar-toggle svg {
