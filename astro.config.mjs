@@ -8,8 +8,8 @@ export default defineConfig({
 	base: '/carapp-landing',
 	integrations: [
 		starlight({
-			title: 'くるまのカルテ',
-			description: 'あなたの車のすべてを、ひとつのアプリで。',
+			title: 'ぶんぶんノート',
+			description: '愛車の管理をもっとスマートに。給油、整備、洗車、ドライブ記録を一括管理。',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
