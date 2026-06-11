@@ -346,11 +346,11 @@ a.lp-tile--link:hover { text-decoration: none !important; }
 	display: flex; gap: 8px; margin-bottom: 16px;
 }
 
-.lp-footer__badges a img {
+.lp-footer__badges img {
 	height: 32px; width: auto; display: block;
 }
 
-.lp-footer__badges a:last-child img {
+.lp-footer__badges > :last-child img {
 	height: 48px; margin: -8px 0;
 }
 
