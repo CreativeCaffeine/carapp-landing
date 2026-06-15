@@ -1,7 +1,10 @@
 ---
-title: くるまのカルテ
-description: あなたの車のすべてを、ひとつのアプリで。
+title: ぶんぶんノート
+description: 愛車の管理をもっとスマートに。給油、整備、洗車、ドライブ記録を一括管理。
 template: splash
+head:
+  - tag: meta
+    attrs: { property: 'og:type', content: 'website' }
 hero:
   tagline: ""
   actions: []
@@ -10,21 +13,22 @@ hero:
 <div class="lp">
 
 {/* ===== HERO ===== */}
+{/* 注意: テキストを含む h1/h2/p は必ず 1 行で書く(複数行にすると MDX が入れ子 <p> を生成しタグが分割される) */}
 <section class="lp-hero">
-  <p class="lp-hero__badge">Car Mante Daily</p>
-  <h1 class="lp-hero__title">
-    愛車管理を<br/><span class="lp-hero__gradient">もっとスマートに</span>
-  </h1>
-  <p class="lp-hero__subtitle">
-    給油・車検・メンテナンス・税金。<br/>すべてのコストを一元管理。
-  </p>
+  <p class="lp-hero__badge"><img src="/carapp-landing/favicon.png" alt="" width="24" height="24" /> ぶんぶんノート</p>
+  <h1 class="lp-hero__title">愛車の記録、<br/><span class="lp-hero__gradient">ぜんぶこれ一冊。</span></h1>
+  <p class="lp-hero__subtitle">給油・整備・洗車・ドライブ。<br/>愛車の管理をもっとスマートに。</p>
   <div class="lp-hero__cta">
-    <a href="/carapp-landing/guide/getting-started/" class="lp-link">使い方を見る →</a>
+    <span class="lp-hero__soon">App Store / Google Play 近日公開</span>
   </div>
   <div class="lp-hero__image">
+    <svg class="lp-hero__route" viewBox="0 0 1000 380" aria-hidden="true">
+      <path d="M-40,330 C140,300 230,170 420,180 S700,80 880,110 1010,60 1040,50" />
+      <circle cx="880" cy="110" r="7" />
+    </svg>
     <div class="lp-hero__phones">
       <div class="lp-phone lp-phone--back">
-        <img src="/carapp-landing/screens/logs.png" alt="ログ画面" loading="eager" />
+        <img src="/carapp-landing/screens/logs.png" alt="記録一覧画面" loading="eager" />
       </div>
       <div class="lp-phone lp-phone--front">
         <img src="/carapp-landing/screens/home.png" alt="ホーム画面" loading="eager" />
@@ -35,21 +39,25 @@ hero:
 
 {/* ===== FEATURE 1: OCR ===== */}
 <section class="lp-block lp-block--white">
-  <div class="lp-block__text">
-    <p class="lp-block__label">AI OCR</p>
-    <h2 class="lp-block__title">撮るだけで、<br/>入力完了。</h2>
-    <p class="lp-block__desc">レシートをカメラで撮影するだけ。<br/>AIが金額・日付・項目を自動で認識します。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/ocr/" class="lp-link">OCRの使い方を見る →</a>
-    </div>
-  </div>
-  <div class="lp-block__image">
-    <div class="lp-block__phone-pair">
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/record-type.png" alt="記録カテゴリ" loading="lazy" />
+  <div class="lp-block__split">
+    <div class="lp-block__text">
+      <p class="lp-block__label">AI OCR</p>
+      <h2 class="lp-block__title">撮るだけで、<br/>入力完了。</h2>
+      <p class="lp-block__desc">レシートも車検証も、カメラで撮るだけ。<br/>AIが金額・日付・項目を自動で読み取ります。</p>
+      <div class="lp-block__cta">
+        <a href="/carapp-landing/guide/ocr/" class="lp-link">OCRの使い方を見る →</a>
       </div>
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/ocr.png" alt="OCRスキャン" loading="lazy" />
+    </div>
+    <div class="lp-block__image">
+      <div class="lp-block__phone-pair">
+        <span class="lp-chip lp-chip--tl">AIが自動入力</span>
+        <span class="lp-chip lp-chip--br lp-chip--fuel">給油 32.5L ・ ¥5,200</span>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/record-type.png" alt="記録カテゴリ" loading="lazy" />
+        </div>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/ocr.png" alt="OCRスキャン" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -60,13 +68,15 @@ hero:
   <div class="lp-block__text">
     <p class="lp-block__label">ドライブ</p>
     <h2 class="lp-block__title">走るたびに、<br/>記録が残る。</h2>
-    <p class="lp-block__desc">GPSが走行ルートを自動追跡。<br/>距離も、時間も、思い出も。</p>
+    <p class="lp-block__desc">GPSが走行ルートを自動追跡。<br/>距離も、時間も、ドライブスコアも。<br/>走った道が思い出になる。</p>
     <div class="lp-block__cta">
       <a href="/carapp-landing/guide/drive/" class="lp-link">ドライブ記録を見る →</a>
     </div>
   </div>
   <div class="lp-block__image">
     <div class="lp-block__phone-pair">
+      <span class="lp-chip lp-chip--tl">Bluetooth で自動記録</span>
+      <span class="lp-chip lp-chip--br lp-chip--score">45.2km ・ 1:24</span>
       <div class="lp-phone lp-phone--md lp-phone--dark">
         <img src="/carapp-landing/screens/driving.png" alt="ドライブ中" loading="lazy" />
       </div>
@@ -79,21 +89,24 @@ hero:
 
 {/* ===== FEATURE 3: Stats ===== */}
 <section class="lp-block lp-block--gray">
-  <div class="lp-block__text">
-    <p class="lp-block__label">費用分析</p>
-    <h2 class="lp-block__title">いくらかかってる？<br/>がすぐわかる。</h2>
-    <p class="lp-block__desc">月別・年別の維持費を自動集計。<br/>カテゴリ別の内訳もひと目で。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/stats/" class="lp-link">費用の確認方法を見る →</a>
-    </div>
-  </div>
-  <div class="lp-block__image">
-    <div class="lp-block__phone-pair">
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/cost.png" alt="費用分析" loading="lazy" />
+  <div class="lp-block__split lp-block__split--reverse">
+    <div class="lp-block__text">
+      <p class="lp-block__label">費用分析</p>
+      <h2 class="lp-block__title">いくらかかってる？<br/>がすぐわかる。</h2>
+      <p class="lp-block__desc">月別・年別の維持費を自動集計。<br/>カテゴリ別の内訳も、月次レポートもひと目で。</p>
+      <div class="lp-block__cta">
+        <a href="/carapp-landing/guide/stats/" class="lp-link">費用の確認方法を見る →</a>
       </div>
-      <div class="lp-phone lp-phone--md">
-        <img src="/carapp-landing/screens/stats.png" alt="統計" loading="lazy" />
+    </div>
+    <div class="lp-block__image">
+      <div class="lp-block__phone-pair">
+        <span class="lp-chip lp-chip--tl lp-chip--cost">今月 ¥28,450</span>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/cost.png" alt="費用分析" loading="lazy" />
+        </div>
+        <div class="lp-phone lp-phone--md">
+          <img src="/carapp-landing/screens/stats.png" alt="統計" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -107,21 +120,28 @@ hero:
   </div>
   <div class="lp-tiles">
     <a href="/carapp-landing/guide/fuel/" class="lp-tile lp-tile--link">
-      <div class="lp-tile__icon">
+      <div class="lp-tile__icon lp-tile__icon--fuel">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="15" y2="22"/><line x1="4" y1="9" x2="14" y2="9"/><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"/><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"/></svg>
       </div>
       <h3 class="lp-tile__title">給油・燃費</h3>
       <p class="lp-tile__desc">ガソリン・EV両対応。満タン給油で平均燃費が自動計算。</p>
     </a>
     <a href="/carapp-landing/guide/maintenance/" class="lp-tile lp-tile--link">
-      <div class="lp-tile__icon">
+      <div class="lp-tile__icon lp-tile__icon--maintenance">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       </div>
       <h3 class="lp-tile__title">メンテナンス</h3>
       <p class="lp-tile__desc">定期点検・タイヤ・オイルなど10種類の専用フォーム。</p>
     </a>
+    <a href="/carapp-landing/guide/wash/" class="lp-tile lp-tile--link">
+      <div class="lp-tile__icon lp-tile__icon--wash">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+      </div>
+      <h3 class="lp-tile__title">洗車</h3>
+      <p class="lp-tile__desc">手洗い・機械洗車に加え、コーティングやワックスも記録。</p>
+    </a>
     <a href="/carapp-landing/guide/reminders/" class="lp-tile lp-tile--link">
-      <div class="lp-tile__icon">
+      <div class="lp-tile__icon lp-tile__icon--reminder">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
       </div>
       <h3 class="lp-tile__title">リマインダー</h3>
@@ -145,28 +165,30 @@ hero:
 </section>
 
 {/* ===== CTA ===== */}
-<section class="lp-block lp-block--accent">
-  <div class="lp-block__text">
-    <h2 class="lp-block__title">はじめよう。</h2>
-    <p class="lp-block__desc">車の維持費管理を、もっとスマートに。</p>
-    <div class="lp-block__cta">
-      <a href="/carapp-landing/guide/getting-started/" class="lp-link">使い方ガイド</a>
-      <a href="/carapp-landing/guide/" class="lp-link">全機能を見る</a>
-      <a href="/carapp-landing/faq/general/" class="lp-link">よくある質問</a>
+<section class="lp-cta">
+  <div class="lp-cta__card">
+    <img class="lp-cta__icon" src="/carapp-landing/apple-touch-icon.png" alt="" width="72" height="72" />
+    <h2 class="lp-cta__title">もうすぐ、走り出します。</h2>
+    <p class="lp-cta__desc">ぶんぶんノートは App Store / Google Play で近日公開予定。<br/>それまでは、使い方ガイドで機能をチェック。</p>
+    <div class="lp-cta__actions">
+      <a href="/carapp-landing/guide/getting-started/" class="lp-btn lp-btn--white">使い方ガイドを見る</a>
+      <a href="/carapp-landing/guide/" class="lp-btn lp-btn--outline">全機能を見る</a>
+      <a href="/carapp-landing/faq/general/" class="lp-btn lp-btn--outline">よくある質問</a>
     </div>
   </div>
 </section>
 
 <footer class="lp-footer">
+  {/* TODO: リリース後は span を <a href="ストアURL"> に戻し lp-store-badge--soon を外す */}
   <div class="lp-footer__badges">
-    <a href="/" aria-label="App Storeからダウンロード">
-      <img src="/carapp-landing/badge-appstore.svg" alt="Download on the App Store" />
-    </a>
-    <a href="/" aria-label="Google Playで手に入れよう">
-      <img src="/carapp-landing/badge-googleplay.png" alt="Google Playで手に入れよう" />
-    </a>
+    <span class="lp-store-badge--soon">
+      <img src="/carapp-landing/badge-appstore.svg" alt="App Store 近日公開" />
+    </span>
+    <span class="lp-store-badge--soon">
+      <img src="/carapp-landing/badge-googleplay.png" alt="Google Play 近日公開" />
+    </span>
   </div>
-  <p>&copy; 2026 くるまのカルテ — Car Mante Daily</p>
+  <p>&copy; 2026 ぶんぶんノート</p>
 </footer>
 
 </div>

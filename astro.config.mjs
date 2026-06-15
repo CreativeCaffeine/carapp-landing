@@ -8,8 +8,9 @@ export default defineConfig({
 	base: '/carapp-landing',
 	integrations: [
 		starlight({
-			title: 'くるまのカルテ',
-			description: 'あなたの車のすべてを、ひとつのアプリで。',
+			title: 'ぶんぶんノート',
+			description: '愛車の管理をもっとスマートに。給油、整備、洗車、ドライブ記録を一括管理。',
+			favicon: '/favicon.png',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
@@ -22,12 +23,44 @@ export default defineConfig({
 			pagefind: false,
 			head: [
 				{
+					tag: 'link',
+					attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap' },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/carapp-landing/apple-touch-icon.png' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image', content: 'https://creativecaffeine.github.io/carapp-landing/og-image.png' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:width', content: '1200' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:height', content: '630' },
+				},
+				{
+					tag: 'meta',
+					attrs: { name: 'twitter:image', content: 'https://creativecaffeine.github.io/carapp-landing/og-image.png' },
+				},
+				{
 					tag: 'script',
 					content: `document.documentElement.setAttribute('data-theme', 'light');localStorage.setItem('starlight-theme', 'light');`,
 				},
 				{
 					tag: 'script',
-					content: `(function(){try{var s=localStorage.getItem('sidebar-collapsed');var c=s===null?location.pathname.indexOf('/specs/')>-1:s==='true';document.documentElement.setAttribute('data-sidebar-collapsed',String(c));}catch(e){}})();`,
+					content: `(function(){try{var s=localStorage.getItem('sidebar-collapsed');var c=s==='true';document.documentElement.setAttribute('data-sidebar-collapsed',String(c));}catch(e){}})();`,
 				},
 				{
 					tag: 'script',
@@ -85,21 +118,6 @@ export default defineConfig({
 					label: 'その他',
 					items: [
 						{ label: 'プレミアムプラン', slug: 'guide/subscription' },
-					],
-				},
-				{
-					label: '仕様書: 現状スナップショット',
-					items: [
-						{ label: '画面一覧', slug: 'specs/snapshot/screens-current' },
-						{ label: 'データベース設計', slug: 'specs/snapshot/db-current' },
-						{ label: 'データフロー', slug: 'specs/snapshot/data-flow-current' },
-						{ label: 'ナビゲーション', slug: 'specs/snapshot/navigation-current' },
-					],
-				},
-				{
-					label: '仕様書: 差分設計',
-					items: [
-						{ label: 'Issue #227-231 適用後', slug: 'specs/diff/after-issues-227-231' },
 					],
 				},
 				{
