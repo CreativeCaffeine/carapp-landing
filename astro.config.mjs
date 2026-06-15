@@ -60,7 +60,7 @@ export default defineConfig({
 				},
 				{
 					tag: 'script',
-					content: `(function(){try{var s=localStorage.getItem('sidebar-collapsed');var c=s===null?location.pathname.indexOf('/specs/')>-1:s==='true';document.documentElement.setAttribute('data-sidebar-collapsed',String(c));}catch(e){}})();`,
+					content: `(function(){try{var s=localStorage.getItem('sidebar-collapsed');var c=s==='true';document.documentElement.setAttribute('data-sidebar-collapsed',String(c));}catch(e){}})();`,
 				},
 				{
 					tag: 'script',
@@ -118,21 +118,6 @@ export default defineConfig({
 					label: 'その他',
 					items: [
 						{ label: 'プレミアムプラン', slug: 'guide/subscription' },
-					],
-				},
-				{
-					label: '仕様書: 現状スナップショット',
-					items: [
-						{ label: '画面一覧', slug: 'specs/snapshot/screens-current' },
-						{ label: 'データベース設計', slug: 'specs/snapshot/db-current' },
-						{ label: 'データフロー', slug: 'specs/snapshot/data-flow-current' },
-						{ label: 'ナビゲーション', slug: 'specs/snapshot/navigation-current' },
-					],
-				},
-				{
-					label: '仕様書: 差分設計',
-					items: [
-						{ label: 'Issue #227-231 適用後', slug: 'specs/diff/after-issues-227-231' },
 					],
 				},
 				{
