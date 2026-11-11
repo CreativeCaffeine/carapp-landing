@@ -109,5 +109,5 @@ iOS では、トラッキングの許可を求める画面で許可した場合�
 
 - 運営者: CreativeCaffeine
 - 運営責任者の氏名と住所: 請求があれば、遅滞なく開示します。[お問い合わせ](/carapp-landing/contact/)のページからご連絡ください。
-- 連絡先: 【要確認: 問い合わせ用のメールアドレス】
+- 連絡先: [お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSew2I5bNHs7IQ5WHNV-A3EyQm20GwIWGgYr1AuKBJsXYNeChA/viewform)
 - 制定日: 【要確認: 制定日】

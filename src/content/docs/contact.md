@@ -11,7 +11,9 @@ description: ぶんぶんノートへのご意見、不具合の報告、ご質�
 
 ## 窓口
 
-【要確認: 問い合わせ用のメールアドレス、またはフォームの URL】
+[お問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSew2I5bNHs7IQ5WHNV-A3EyQm20GwIWGgYr1AuKBJsXYNeChA/viewform)からお送りください。
+
+返信が必要な場合は、フォームに返信先のメールアドレスをご記入ください。記入がない場合は返信できません。
 
 ## 送る前に
 
