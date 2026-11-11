@@ -126,6 +126,14 @@ export default defineConfig({
 						{ label: 'FAQ', slug: 'faq/general' },
 					],
 				},
+				{
+					label: 'サポート・規約',
+					items: [
+						{ label: 'お問い合わせ', slug: 'contact' },
+						{ label: '利用規約', slug: 'terms' },
+						{ label: 'プライバシーポリシー', slug: 'privacy' },
+					],
+				},
 			],
 		}),
 	],
